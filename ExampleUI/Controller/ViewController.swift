@@ -8,7 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+  private var searchText = ""
+  
+  private var filterVC: [ViewCoordinator] {
+    guard searchText.isNotEmpty else { return ViewCoordinator.allCases }
+    return ViewCoordinator.allCases
+      .filter { $0.title.lowercased().localizedStandardContains(searchText ) }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
