@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				9D1371932B650C57004CEB9A /* MainResources */,
-				9D1371942B650C9F004CEB9A /* Views */,
+				9D1371942B650C9F004CEB9A /* Controller */,
 			);
 			path = ExampleUI;
 			sourceTree = "<group>";
@@ -72,12 +72,12 @@
 			path = MainResources;
 			sourceTree = "<group>";
 		};
-		9D1371942B650C9F004CEB9A /* Views */ = {
+		9D1371942B650C9F004CEB9A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9D1371832B650BF8004CEB9A /* ViewController.swift */,
 			);
-			path = Views;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
