@@ -24,6 +24,7 @@
 		9D56828D2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */; };
 		9D56828F2B6549DD001D123F /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56828E2B6549DD001D123F /* Platform.swift */; };
 		9D5682912B654BC5001D123F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682902B654BC5001D123F /* ArrayExtensions.swift */; };
+		9D5682932B6551E4001D123F /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682922B6551E4001D123F /* ToastManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewFlowLayoutExtensions.swift; sourceTree = "<group>"; };
 		9D56828E2B6549DD001D123F /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		9D5682902B654BC5001D123F /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		9D5682922B6551E4001D123F /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				9D56828A2B6540BA001D123F /* UIFontExtensions.swift */,
 				9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */,
 				9D56828E2B6549DD001D123F /* Platform.swift */,
+				9D5682922B6551E4001D123F /* ToastManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				9D5682872B652741001D123F /* UITableViewExtensions.swift in Sources */,
 				9D1371822B650BF8004CEB9A /* SceneDelegate.swift in Sources */,
 				9D56828B2B6540BA001D123F /* UIFontExtensions.swift in Sources */,
+				9D5682932B6551E4001D123F /* ToastManager.swift in Sources */,
 				9D1371A22B65132F004CEB9A /* ViewCoordinator.swift in Sources */,
 				9D1371A52B651393004CEB9A /* CustomTextVC.swift in Sources */,
 				9D5682852B6526D4001D123F /* CustomTextFieldVC.swift in Sources */,
