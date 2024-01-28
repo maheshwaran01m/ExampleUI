@@ -15,6 +15,15 @@
 		9D1371A22B65132F004CEB9A /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A12B65132F004CEB9A /* ViewCoordinator.swift */; };
 		9D1371A52B651393004CEB9A /* CustomTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A42B651393004CEB9A /* CustomTextVC.swift */; };
 		9D1371A82B651415004CEB9A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A72B651415004CEB9A /* StringExtensions.swift */; };
+		9D1371AA2B651499004CEB9A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A92B651499004CEB9A /* UIViewExtensions.swift */; };
+		9D5682832B65204A001D123F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682822B65204A001D123F /* ListTableViewCell.swift */; };
+		9D5682852B6526D4001D123F /* CustomTextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682842B6526D4001D123F /* CustomTextFieldVC.swift */; };
+		9D5682872B652741001D123F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682862B652741001D123F /* UITableViewExtensions.swift */; };
+		9D5682892B6528F8001D123F /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682882B6528F8001D123F /* UICollectionViewExtensions.swift */; };
+		9D56828B2B6540BA001D123F /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56828A2B6540BA001D123F /* UIFontExtensions.swift */; };
+		9D56828D2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */; };
+		9D56828F2B6549DD001D123F /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56828E2B6549DD001D123F /* Platform.swift */; };
+		9D5682912B654BC5001D123F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682902B654BC5001D123F /* ArrayExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		9D1371A12B65132F004CEB9A /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		9D1371A42B651393004CEB9A /* CustomTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextVC.swift; sourceTree = "<group>"; };
 		9D1371A72B651415004CEB9A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		9D1371A92B651499004CEB9A /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		9D5682822B65204A001D123F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		9D5682842B6526D4001D123F /* CustomTextFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldVC.swift; sourceTree = "<group>"; };
+		9D5682862B652741001D123F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		9D5682882B6528F8001D123F /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		9D56828A2B6540BA001D123F /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
+		9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewFlowLayoutExtensions.swift; sourceTree = "<group>"; };
+		9D56828E2B6549DD001D123F /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		9D5682902B654BC5001D123F /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				9D1371A12B65132F004CEB9A /* ViewCoordinator.swift */,
+				9D5682812B65202F001D123F /* Cells */,
 				9D1371A32B651387004CEB9A /* CustomViews */,
 			);
 			path = Coordinator;
@@ -101,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				9D1371A42B651393004CEB9A /* CustomTextVC.swift */,
+				9D5682842B6526D4001D123F /* CustomTextFieldVC.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -109,8 +129,23 @@
 			isa = PBXGroup;
 			children = (
 				9D1371A72B651415004CEB9A /* StringExtensions.swift */,
+				9D5682902B654BC5001D123F /* ArrayExtensions.swift */,
+				9D1371A92B651499004CEB9A /* UIViewExtensions.swift */,
+				9D5682862B652741001D123F /* UITableViewExtensions.swift */,
+				9D5682882B6528F8001D123F /* UICollectionViewExtensions.swift */,
+				9D56828A2B6540BA001D123F /* UIFontExtensions.swift */,
+				9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */,
+				9D56828E2B6549DD001D123F /* Platform.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		9D5682812B65202F001D123F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9D5682822B65204A001D123F /* ListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +218,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D56828F2B6549DD001D123F /* Platform.swift in Sources */,
+				9D5682912B654BC5001D123F /* ArrayExtensions.swift in Sources */,
 				9D1371A82B651415004CEB9A /* StringExtensions.swift in Sources */,
+				9D56828D2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift in Sources */,
+				9D5682892B6528F8001D123F /* UICollectionViewExtensions.swift in Sources */,
+				9D5682832B65204A001D123F /* ListTableViewCell.swift in Sources */,
+				9D1371AA2B651499004CEB9A /* UIViewExtensions.swift in Sources */,
 				9D1371842B650BF8004CEB9A /* ViewController.swift in Sources */,
 				9D1371802B650BF8004CEB9A /* AppDelegate.swift in Sources */,
+				9D5682872B652741001D123F /* UITableViewExtensions.swift in Sources */,
 				9D1371822B650BF8004CEB9A /* SceneDelegate.swift in Sources */,
+				9D56828B2B6540BA001D123F /* UIFontExtensions.swift in Sources */,
 				9D1371A22B65132F004CEB9A /* ViewCoordinator.swift in Sources */,
 				9D1371A52B651393004CEB9A /* CustomTextVC.swift in Sources */,
+				9D5682852B6526D4001D123F /* CustomTextFieldVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
