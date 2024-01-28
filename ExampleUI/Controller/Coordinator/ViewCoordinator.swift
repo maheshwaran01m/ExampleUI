@@ -8,17 +8,19 @@
 import UIKit
 
 enum ViewCoordinator: CaseIterable {
-  case text
+  case text, textField
   
   var title: String {
     switch self {
     case .text: return "Text"
+    case .textField: return "TextField"
     }
   }
   
   var destinationView: UIViewController {
     switch self {
     case .text: return CustomTextVC()
+    case .textField: return CustomTextFieldVC()
     }
   }
 }
