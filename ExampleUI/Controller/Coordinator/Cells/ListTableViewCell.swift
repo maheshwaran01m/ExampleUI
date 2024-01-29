@@ -35,13 +35,12 @@ class ListTableViewCell: UITableViewCell {
   }
   
   private func setupConstraints() {
-    containerView.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
-      containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-      containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-      containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
-    ])
+    containerView.make {
+      $0.top(contentView.topAnchor, constant: 2)
+      $0.leading(contentView.leadingAnchor, constant: 5)
+      $0.trailing(contentView.trailingAnchor, constant: -5)
+      $0.bottom(contentView.bottomAnchor, constant: -2)
+    }
   }
   
   func configure(_ item: ViewCoordinator) {
