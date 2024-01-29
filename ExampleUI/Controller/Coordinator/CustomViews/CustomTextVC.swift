@@ -48,19 +48,18 @@ class CustomTextVC: UIViewController {
   }
   
   private func setupConstraints() {
-    textLabel.translatesAutoresizingMaskIntoConstraints = false
-    detailLabel.translatesAutoresizingMaskIntoConstraints = false
+    textLabel.make {
+      $0.centerX(view.centerXAnchor)
+      $0.centerY(view.centerYAnchor)
+      $0.height(44)
+      $0.width(textLabel.contentWidth + 40)
+    }
     
-    NSLayoutConstraint.activate([
-      textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-      textLabel.heightAnchor.constraint(equalToConstant: 44),
-      textLabel.widthAnchor.constraint(equalToConstant: textLabel.contentWidth + 40),
-      
-      detailLabel.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 10),
-      detailLabel.heightAnchor.constraint(equalToConstant: 44),
-      detailLabel.widthAnchor.constraint(equalToConstant: detailLabel.contentWidth + 40),
-      detailLabel.leadingAnchor.constraint(equalTo: textLabel.leadingAnchor)
-    ])
+    detailLabel.make {
+      $0.top(textLabel.bottomAnchor, constant: 10)
+      $0.height(44)
+      $0.width(detailLabel.contentWidth + 40)
+      $0.leading(textLabel.leadingAnchor)
+    }
   }
 }

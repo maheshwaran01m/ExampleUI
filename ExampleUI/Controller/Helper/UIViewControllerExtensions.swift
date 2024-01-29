@@ -14,4 +14,12 @@ extension UIViewController {
       view.translatesAutoresizingMaskIntoConstraints = value
     }
   }
+  
+  func show(_ vc: UIViewController) {
+    show(vc, sender: self)
+  }
+  
+  func detail(_ vc: UIViewController) {
+    showDetailViewController(vc, sender: self)
+  }
 }

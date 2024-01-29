@@ -101,25 +101,31 @@ class CustomTextFieldVC: UIViewController {
     
     demicalField.addDoneButton()
     
-    NSLayoutConstraint.activate([
-      contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-      contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-      
-      emailField.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
-      emailField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-      emailField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-      emailField.heightAnchor.constraint(equalToConstant: viewHeight),
-      
-      passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: padding),
-      passwordField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-      passwordField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-      passwordField.heightAnchor.constraint(equalToConstant: viewHeight),
-      
-      demicalField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: padding),
-      demicalField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-      demicalField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
-      demicalField.heightAnchor.constraint(equalToConstant: viewHeight),
-    ])
+    contentView.make {
+      $0.width(scrollView.widthAnchor)
+      $0.height(scrollView.heightAnchor)
+    }
+    
+    emailField.make {
+      $0.top(contentView.topAnchor, constant: padding)
+      $0.leading(contentView.leadingAnchor, constant: padding)
+      $0.trailing(contentView.trailingAnchor, constant: -padding)
+      $0.height(viewHeight)
+    }
+    
+    passwordField.make {
+      $0.top(emailField.bottomAnchor, constant: padding)
+      $0.leading(contentView.leadingAnchor, constant: padding)
+      $0.trailing(contentView.trailingAnchor, constant: -padding)
+      $0.height(viewHeight)
+    }
+    
+    demicalField.make {
+      $0.top(passwordField.bottomAnchor, constant: padding)
+      $0.leading(contentView.leadingAnchor, constant: padding)
+      $0.trailing(contentView.trailingAnchor, constant: -padding)
+      $0.height(viewHeight)
+    }
   }
 }
 
