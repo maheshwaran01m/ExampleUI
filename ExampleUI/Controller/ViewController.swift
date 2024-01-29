@@ -74,6 +74,7 @@ extension ViewController: UISearchBarDelegate, UISearchResultsUpdating {
     searchVC.obscuresBackgroundDuringPresentation = false
     
     navigationItem.searchController = searchVC
+    navigationItem.preferredSearchBarPlacement = .stacked
     navigationItem.hidesSearchBarWhenScrolling = false
   }
   
