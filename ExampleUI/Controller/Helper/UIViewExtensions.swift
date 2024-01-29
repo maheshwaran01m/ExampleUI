@@ -15,14 +15,10 @@ extension UIView {
     }
   }
   
-  func edges(to superView: UIView) {
-    translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor),
-      leadingAnchor.constraint(equalTo: superView.leadingAnchor),
-      trailingAnchor.constraint(equalTo: superView.trailingAnchor),
-      bottomAnchor.constraint(equalTo: superView.bottomAnchor),
-    ])
+  func autoresizingMask(_ views: UIView..., to value: Bool = false) {
+    for view in views {
+      view.translatesAutoresizingMaskIntoConstraints = value
+    }
   }
 }
 
@@ -30,15 +26,17 @@ extension UIView {
 
 extension UIView {
   
-  func border(_ radius: CGFloat, width: CGFloat, color: UIColor = .clear) {
+  func border(_ radius: CGFloat, width: CGFloat, color: UIColor = .clear, showShadow: Bool = false) {
     layer.cornerRadius = radius
     layer.masksToBounds = true
     layer.borderColor = color.cgColor
     layer.borderWidth = width
     
-    layer.shadowColor = UIColor.black.cgColor
-    layer.shadowOffset = CGSizeMake(2.0, 2.0)
-    layer.shadowOpacity = 1.0
+    if showShadow {
+      layer.shadowColor = UIColor.black.cgColor
+      layer.shadowOffset = CGSizeMake(2.0, 2.0)
+      layer.shadowOpacity = 1.0
+    }
   }
 }
 
@@ -46,15 +44,15 @@ extension UIView {
 
 extension UIView {
   
-  var height: CGFloat {
+  var contentHeight: CGFloat {
     intrinsicContentSize.height
   }
   
-  var width: CGFloat {
+  var contentWidth: CGFloat {
     intrinsicContentSize.width
   }
   
-  var size: CGSize {
+  var contentSize: CGSize {
     intrinsicContentSize
   }
 }

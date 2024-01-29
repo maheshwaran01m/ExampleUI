@@ -25,6 +25,10 @@
 		9D56828F2B6549DD001D123F /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56828E2B6549DD001D123F /* Platform.swift */; };
 		9D5682912B654BC5001D123F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682902B654BC5001D123F /* ArrayExtensions.swift */; };
 		9D5682932B6551E4001D123F /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682922B6551E4001D123F /* ToastManager.swift */; };
+		9D5682952B665545001D123F /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682942B665544001D123F /* UIViewControllerExtensions.swift */; };
+		9D5682972B665873001D123F /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682962B665873001D123F /* LayoutConstraint.swift */; };
+		9D5682992B665E67001D123F /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682982B665E67001D123F /* UITextFieldExtensions.swift */; };
+		9D56829B2B66643A001D123F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56829A2B66643A001D123F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		9D56828E2B6549DD001D123F /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		9D5682902B654BC5001D123F /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		9D5682922B6551E4001D123F /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		9D5682942B665544001D123F /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		9D5682962B665873001D123F /* LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		9D5682982B665E67001D123F /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		9D56829A2B66643A001D123F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,15 +138,19 @@
 		9D1371A62B651406004CEB9A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9D5682962B665873001D123F /* LayoutConstraint.swift */,
+				9D56829A2B66643A001D123F /* Constants.swift */,
 				9D1371A72B651415004CEB9A /* StringExtensions.swift */,
 				9D5682902B654BC5001D123F /* ArrayExtensions.swift */,
 				9D1371A92B651499004CEB9A /* UIViewExtensions.swift */,
+				9D5682942B665544001D123F /* UIViewControllerExtensions.swift */,
 				9D5682862B652741001D123F /* UITableViewExtensions.swift */,
 				9D5682882B6528F8001D123F /* UICollectionViewExtensions.swift */,
 				9D56828A2B6540BA001D123F /* UIFontExtensions.swift */,
 				9D56828C2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift */,
 				9D56828E2B6549DD001D123F /* Platform.swift */,
 				9D5682922B6551E4001D123F /* ToastManager.swift */,
+				9D5682982B665E67001D123F /* UITextFieldExtensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -222,9 +234,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D56828F2B6549DD001D123F /* Platform.swift in Sources */,
+				9D5682952B665545001D123F /* UIViewControllerExtensions.swift in Sources */,
 				9D5682912B654BC5001D123F /* ArrayExtensions.swift in Sources */,
 				9D1371A82B651415004CEB9A /* StringExtensions.swift in Sources */,
 				9D56828D2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift in Sources */,
+				9D5682992B665E67001D123F /* UITextFieldExtensions.swift in Sources */,
+				9D56829B2B66643A001D123F /* Constants.swift in Sources */,
 				9D5682892B6528F8001D123F /* UICollectionViewExtensions.swift in Sources */,
 				9D5682832B65204A001D123F /* ListTableViewCell.swift in Sources */,
 				9D1371AA2B651499004CEB9A /* UIViewExtensions.swift in Sources */,
@@ -234,6 +249,7 @@
 				9D1371822B650BF8004CEB9A /* SceneDelegate.swift in Sources */,
 				9D56828B2B6540BA001D123F /* UIFontExtensions.swift in Sources */,
 				9D5682932B6551E4001D123F /* ToastManager.swift in Sources */,
+				9D5682972B665873001D123F /* LayoutConstraint.swift in Sources */,
 				9D1371A22B65132F004CEB9A /* ViewCoordinator.swift in Sources */,
 				9D1371A52B651393004CEB9A /* CustomTextVC.swift in Sources */,
 				9D5682852B6526D4001D123F /* CustomTextFieldVC.swift in Sources */,

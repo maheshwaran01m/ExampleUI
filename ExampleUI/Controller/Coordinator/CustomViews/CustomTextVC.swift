@@ -41,7 +41,8 @@ class CustomTextVC: UIViewController {
     textLabel.border(16, width: 1, color: .gray)
     
     view.addSubview(detailLabel)
-    detailLabel.backgroundColor = .red
+    detailLabel.backgroundColor = .systemCyan.withAlphaComponent(0.5)
+    detailLabel.border(20, width: 1, color: .red)
     
     setupConstraints()
   }
@@ -54,11 +55,11 @@ class CustomTextVC: UIViewController {
       textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       textLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
       textLabel.heightAnchor.constraint(equalToConstant: 44),
-      textLabel.widthAnchor.constraint(equalToConstant: textLabel.width + 40),
+      textLabel.widthAnchor.constraint(equalToConstant: textLabel.contentWidth + 40),
       
       detailLabel.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 10),
       detailLabel.heightAnchor.constraint(equalToConstant: 44),
-      detailLabel.widthAnchor.constraint(equalToConstant: detailLabel.width + 40),
+      detailLabel.widthAnchor.constraint(equalToConstant: detailLabel.contentWidth + 40),
       detailLabel.leadingAnchor.constraint(equalTo: textLabel.leadingAnchor)
     ])
   }

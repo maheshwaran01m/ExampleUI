@@ -1,0 +1,17 @@
+//
+//  UIViewControllerExtensions.swift
+//  ExampleUI
+//
+//  Created by MAHESHWARAN on 28/01/24.
+//
+
+import UIKit
+
+extension UIViewController {
+  
+  func autoresizingMask(_ views: UIView..., to value: Bool = false) {
+    for view in views {
+      view.translatesAutoresizingMaskIntoConstraints = value
+    }
+  }
+}
