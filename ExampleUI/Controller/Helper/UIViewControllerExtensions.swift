@@ -22,4 +22,8 @@ extension UIViewController {
   func detail(_ vc: UIViewController) {
     showDetailViewController(vc, sender: self)
   }
+  
+  var presenterVC: UIViewController {
+    parent?.presenterVC ?? parent ?? self
+  }
 }
