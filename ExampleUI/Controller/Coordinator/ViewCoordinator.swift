@@ -8,12 +8,13 @@
 import UIKit
 
 enum ViewCoordinator: CaseIterable {
-  case text, textField
+  case text, textField, image
   
   var title: String {
     switch self {
     case .text: return "Text"
     case .textField: return "TextField"
+    case .image: return "Image"
     }
   }
   
@@ -21,6 +22,7 @@ enum ViewCoordinator: CaseIterable {
     switch self {
     case .text: return CustomTextVC()
     case .textField: return CustomTextFieldVC()
+    case .image: return CustomImageView()
     }
   }
 }
