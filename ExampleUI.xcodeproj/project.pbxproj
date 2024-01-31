@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D057E382B6891C10042D6D9 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D057E372B6891C10042D6D9 /* AvatarImage.swift */; };
 		9D057E3A2B68A1840042D6D9 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D057E392B68A1840042D6D9 /* CustomImageView.swift */; };
+		9D057E3C2B68A6170042D6D9 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D057E3B2B68A6170042D6D9 /* Symbol.swift */; };
 		9D1371802B650BF8004CEB9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13717F2B650BF8004CEB9A /* AppDelegate.swift */; };
 		9D1371822B650BF8004CEB9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371812B650BF8004CEB9A /* SceneDelegate.swift */; };
 		9D1371842B650BF8004CEB9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371832B650BF8004CEB9A /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		9D057E372B6891C10042D6D9 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		9D057E392B68A1840042D6D9 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		9D057E3B2B68A6170042D6D9 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		9D13717C2B650BF8004CEB9A /* ExampleUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D13717F2B650BF8004CEB9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D1371812B650BF8004CEB9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				9D5682922B6551E4001D123F /* ToastManager.swift */,
 				9D5682982B665E67001D123F /* UITextFieldExtensions.swift */,
 				9D4F72D62B67594E00390213 /* DispatchQueueExtensions.swift */,
+				9D057E3B2B68A6170042D6D9 /* Symbol.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				9D057E3A2B68A1840042D6D9 /* CustomImageView.swift in Sources */,
 				9D057E382B6891C10042D6D9 /* AvatarImage.swift in Sources */,
 				9D5682912B654BC5001D123F /* ArrayExtensions.swift in Sources */,
+				9D057E3C2B68A6170042D6D9 /* Symbol.swift in Sources */,
 				9D1371A82B651415004CEB9A /* StringExtensions.swift in Sources */,
 				9D56828D2B654928001D123F /* UICollectionViewFlowLayoutExtensions.swift in Sources */,
 				9D5682992B665E67001D123F /* UITextFieldExtensions.swift in Sources */,
