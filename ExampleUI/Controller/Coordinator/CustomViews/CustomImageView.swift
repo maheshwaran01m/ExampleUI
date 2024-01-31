@@ -26,10 +26,11 @@ class CustomImageView: UIViewController {
   private func setupLabel() {
     view.addSubviews(avatarImageView, bellImageView)
     
-    avatarImageView.image = UIImage(systemName: "bell")
+    avatarImageView.image = .bell
     avatarImageView.setCornerRadius(.custom(12), borderColor: .red, width: 1)
     
-    bellImageView.image = UIImage(systemName: "person.circle")
+    bellImageView.image = .personCircle
+    bellImageView.tintColor = .red
     bellImageView.setCornerRadius(.rounded, borderColor: .gray, width: 1)
     
     setupConstraints()
