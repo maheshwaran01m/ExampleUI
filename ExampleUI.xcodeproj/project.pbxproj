@@ -19,6 +19,7 @@
 		9D1371A52B651393004CEB9A /* CustomTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A42B651393004CEB9A /* CustomTextVC.swift */; };
 		9D1371A82B651415004CEB9A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A72B651415004CEB9A /* StringExtensions.swift */; };
 		9D1371AA2B651499004CEB9A /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1371A92B651499004CEB9A /* UIViewExtensions.swift */; };
+		9D460AFC2B78C16A00474452 /* CustomSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D460AFB2B78C16A00474452 /* CustomSearchVC.swift */; };
 		9D4F72D72B67594E00390213 /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4F72D62B67594E00390213 /* DispatchQueueExtensions.swift */; };
 		9D5682832B65204A001D123F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682822B65204A001D123F /* ListTableViewCell.swift */; };
 		9D5682852B6526D4001D123F /* CustomTextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682842B6526D4001D123F /* CustomTextFieldVC.swift */; };
@@ -53,6 +54,7 @@
 		9D1371A42B651393004CEB9A /* CustomTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextVC.swift; sourceTree = "<group>"; };
 		9D1371A72B651415004CEB9A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		9D1371A92B651499004CEB9A /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		9D460AFB2B78C16A00474452 /* CustomSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchVC.swift; sourceTree = "<group>"; };
 		9D4F72D62B67594E00390213 /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
 		9D5682822B65204A001D123F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		9D5682842B6526D4001D123F /* CustomTextFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldVC.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				9D5682842B6526D4001D123F /* CustomTextFieldVC.swift */,
 				9DE57BBA2B69E892004C3DCB /* CustomTextViewVC.swift */,
 				9D057E392B68A1840042D6D9 /* CustomImageView.swift */,
+				9D460AFB2B78C16A00474452 /* CustomSearchVC.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				9D56829B2B66643A001D123F /* Constants.swift in Sources */,
 				9D5682892B6528F8001D123F /* UICollectionViewExtensions.swift in Sources */,
 				9DE57BBD2B69EA3F004C3DCB /* PlaceholderTextView.swift in Sources */,
+				9D460AFC2B78C16A00474452 /* CustomSearchVC.swift in Sources */,
 				9D5682832B65204A001D123F /* ListTableViewCell.swift in Sources */,
 				9D1371AA2B651499004CEB9A /* UIViewExtensions.swift in Sources */,
 				9D1371842B650BF8004CEB9A /* ViewController.swift in Sources */,
