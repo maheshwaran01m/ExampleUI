@@ -56,3 +56,12 @@ extension UIView {
     intrinsicContentSize
   }
 }
+
+// MARK: - UIColor
+
+extension UIColor {
+  
+  public func opacity(_ value: CGFloat) -> UIColor {
+    withAlphaComponent(value)
+  }
+}
