@@ -7,6 +7,41 @@
 
 import UIKit
 
+public extension UIImageView {
+  
+  func size(_ size: CGFloat, scale: UIImage.SymbolScale = .medium, weight: UIImage.SymbolWeight = .regular) {
+    preferredSymbolConfiguration = .init(pointSize: size, weight: weight, scale: scale)
+  }
+  
+  func size(_ font: UIFont) {
+    preferredSymbolConfiguration = .init(font: font)
+  }
+}
+
+// MARK: - Symbol
+
+enum Symbol {
+  
+  static var randomElement: PlatformImage {
+    allCases.randomElement() ?? .add
+  }
+  
+  static var allCases: [PlatformImage] {
+    Icon.allCases.map { PlatformImage(systemName: $0.rawValue) ?? .add }
+  }
+}
+
+// MARK: - Image
+
+extension PlatformImage {
+  
+  convenience init(icon: Icon) {
+    self.init(systemName: icon.rawValue)!
+  }
+}
+
+// MARK: - PlatformImage
+
 extension PlatformImage {
   
   static var person: UIImage {
@@ -1809,13 +1844,1850 @@ extension PlatformImage {
   }
 }
 
-public extension UIImageView {
+
+// MARK: - Icon
+ 
+enum Icon: String, CaseIterable {
   
-  func size(_ size: CGFloat, scale: UIImage.SymbolScale = .medium, weight: UIImage.SymbolWeight = .regular) {
-    preferredSymbolConfiguration = .init(pointSize: size, weight: weight, scale: scale)
-  }
+  case person = "person"
   
-  func size(_ font: UIFont) {
-    preferredSymbolConfiguration = .init(font: font)
-  }
+  case personCircle = "person.circle"
+  
+  case bell = "bell"
+  
+  case star = "star"
+  
+  case share = "square.and.arrow.up"
+  
+  case shareCircle = "square.and.arrow.up.circle"
+  
+  case shareFill = "square.and.arrow.up.fill"
+  
+  case shareCircleFill = "square.and.arrow.up.circle.fill"
+  
+  case pencil = "pencil"
+  
+  case pencilCircle = "pencil.circle"
+  
+  case pencilCircleFill = "pencil.circle.fill"
+  
+  case eraser = "eraser"
+  
+  case eraserFill = "eraser.fill"
+  
+  case squarePencil = "square.and.pencil"
+  
+  case squarePencilCircle = "square.and.pencil.circle"
+  
+  case pencilTip = "pencil.tip"
+  
+  case pencilTipCircle = "pencil.tip.crop.circle"
+  
+  case pencilTipCircleFill = "pencil.tip.crop.circle.fill"
+  
+  case trash = "trash"
+  
+  case trashFill = "trash.fill"
+  
+  case trashCircle = "trash.circle"
+  
+  case trashCircleFill = "trash.circle.fill"
+  
+  case trashSquare = "trash.square"
+  
+  case trashSquareFill = "trash.square.fill"
+  
+  case folder = "folder"
+  
+  case folderFill = "folder.fill"
+  
+  case folderCircle = "folder.circle"
+  
+  case folderCircleFill = "folder.circle.fill"
+  
+  case folderBadge = "folder.badge.plus"
+  
+  case folderBadgeFill = "folder.fill.badge.plus"
+  
+  case folderBadgeMinus = "folder.badge.minus"
+  
+  case folderBadgeMinusFill = "folder.fill.badge.minus"
+  
+  case paperplane = "paperplane"
+  
+  case paperplaneFill = "paperplane.fill"
+  
+  case paperplaneCircle = "paperplane.circle"
+  
+  case paperplaneCircleFill = "paperplane.circle.fill"
+  
+  case doc = "doc"
+  
+  case docFill = "doc.fill"
+  
+  case docCircle = "doc.circle"
+  
+  case docCircleFill = "doc.circle.fill"
+  
+  case docText = "doc.text"
+  
+  case docTextFill = "doc.text.fill"
+  
+  case docOn = "doc.on.doc"
+  
+  case docOnFill = "doc.on.doc.fill"
+  
+  case clipboard = "clipboard"
+  
+  case clipboardFill = "clipboard.fill"
+  
+  case listBulletClipboard = "list.bullet.clipboard"
+  
+  case listBulletClipboardFill = "list.bullet.clipboard.fill"
+  
+  case docPlainText = "doc.plaintext"
+  
+  case docPlainTextFill = "doc.plaintext.fill"
+  
+  case note = "note"
+  
+  case noteText = "note.text"
+  
+  case calendar = "calendar"
+  
+  case calendarCircle = "calendar.circle"
+  
+  case calendarClock = "calendar.badge.clock"
+  
+  case book = "book"
+  
+  case bookCircle = "book.circle"
+  
+  case bookCircleFill = "book.circle.fill"
+  
+  case bookFill = "book.fill"
+  
+  case booksVertical = "books.vertical"
+  
+  case booksVerticalFill = "books.vertical.fill"
+  
+  case booksVerticalCircle = "books.vertical.circle"
+  
+  case booksVerticalCircleFill = "books.vertical.circle.fill"
+  
+  case bookmark = "bookmark"
+  
+  case bookmarkFill = "bookmark.fill"
+  
+  case bookmarkCircle = "bookmark.circle"
+  
+  case bookmarkCircleFill = "bookmark.circle.fill"
+  
+  case bookmarkSquare = "bookmark.square"
+  
+  case bookmarkSquareFill = "bookmark.square.fill"
+  
+  case ruler = "ruler"
+  
+  case rulerFill = "ruler.fill"
+  
+  case pencilAndRuler = "pencil.and.ruler"
+  
+  case pencilAndRulerFill = "pencil.and.ruler.fill"
+  
+  case backpack = "backpack"
+  
+  case backpackFill = "backpack.fill"
+  
+  case backpackCircle = "backpack.circle"
+  
+  case backpackCircleFill = "backpack.circle.fill"
+  
+  case paperclip = "paperclip"
+  
+  case paperclipCircle = "paperclip.circle"
+  
+  case paperclipCircleFill = "paperclip.circle.fill"
+  
+  case link = "link"
+  
+  case linkCircle = "link.circle"
+  
+  case linkCircleFill = "link.circle.fill"
+  
+  case personalHotspot = "personalhotspot"
+  
+  case personalHotspotCircle = "personalhotspot.circle"
+  
+  case personalHotspotCircleFill = "personalhotspot.circle.fill"
+  
+  case personCircleFill = "person.circle.fill"
+  
+  case personFill = "person.fill"
+  
+  case shareplay = "shareplay"
+  
+  case person2 = "person.2"
+  
+  case person2Fill = "person.2.fill"
+  
+  case person2Circle = "person.2.circle"
+  
+  case person2CircleFill = "person.2.circle.fill"
+  
+  case person3 = "person.3"
+  
+  case person3Fill = "person.3.fill"
+  
+  case personCropCircle = "person.crop.circle"
+  
+  case personCropCircleFill = "person.crop.circle.fill"
+  
+  case personCropSquare = "person.crop.square"
+  
+  case personCropSquareFill = "person.crop.square.fill"
+  
+  case globe = "globe"
+  
+  case network = "network"
+  
+  case sunMin = "sun.min"
+  
+  case sunMinFill = "sun.min.fill"
+  
+  case sunMax = "sun.max"
+  
+  case sunMaxFill = "sun.max.fill"
+  
+  case cloud = "cloud"
+  
+  case cloudFill = "cloud.fill"
+  
+  case cloudRain = "cloud.rain"
+  
+  case cloudRainFill = "cloud.rain.fill"
+  
+  case cloudBoltRain = "cloud.bolt.rain"
+  
+  case cloudBoltRainFill = "cloud.bolt.rain.fill"
+  
+  case cloudSun = "cloud.sun"
+  
+  case cloudSunFill = "cloud.sun.fill"
+  
+  case drop = "drop"
+  
+  case dropFill = "drop.fill"
+  
+  case play = "play"
+  
+  case playFill = "play.fill"
+  
+  case playCircle = "play.circle"
+  
+  case playCircleFill = "play.circle.fill"
+  
+  case playSquare = "play.square"
+  
+  case playSquareFill = "play.square.fill"
+  
+  case playRectangle = "play.rectangle"
+  
+  case playRectangleFill = "play.rectangle.fill"
+  
+  case pause = "pause"
+  
+  case pauseFill = "pause.fill"
+  
+  case pauseCircle = "pause.circle"
+  
+  case pauseCircleFill = "pause.circle.fill"
+  
+  case pauseRectangle = "pause.rectangle"
+  
+  case pauseRectangleFill = "pause.rectangle.fill"
+  
+  case stop = "stop"
+  
+  case stopFill = "stop.fill"
+  
+  case stopCircle = "stop.circle"
+  
+  case stopCircleFill = "stop.circle.fill"
+  
+  case recordCircle = "record.circle"
+  
+  case recordCircleFill = "record.circle.fill"
+  
+  case playPause = "playpause"
+  
+  case playPauseFill = "playpause.fill"
+  
+  case playPauseCircle = "playpause.circle"
+  
+  case playPauseCircleFill = "playpause.circle.fill"
+  
+  case backward = "backward"
+  
+  case backwardFill = "backward.fill"
+  
+  case backwardCircle = "backward.circle"
+  
+  case backwardCircleFill = "backward.circle.fill"
+  
+  case forward = "forward"
+  
+  case forwardFill = "forward.fill"
+  
+  case forwardCircle = "forward.circle"
+  
+  case forwardCircleFill = "forward.circle.fill"
+  
+  case backwardEnd = "backward.end"
+  
+  case backwardEndFill = "backward.end.fill"
+  
+  case forwardEnd = "forward.end"
+  
+  case forwardEndFill = "forward.end.fill"
+  
+  case infinity = "infinity"
+  
+  case infinityCircle = "infinity.circle"
+  
+  case sos = "SOS"
+  
+  case sosCircle = "sos.circle"
+  
+  case sosCircleFill = "sos.circle.fill"
+  
+  case speaker = "speaker"
+  
+  case speakerFill = "speaker.fill"
+  
+  case speakerSquare = "speaker.square"
+  
+  case speakerSquareFill = "speaker.square.fill"
+  
+  case speakerPlus = "speaker.plus"
+  
+  case speakerPlusFill = "speaker.plus.fill"
+  
+  case speakerMinus = "speaker.minus"
+  
+  case speakerMinusFill = "speaker.minus.Fill"
+  
+  case speakerWave3 = "speaker.wave.3"
+  
+  case speakerWave3Fill = "speaker.wave.3.fill"
+  
+  case musicNote = "music.note"
+  
+  case musicNoteList = "music.note.list"
+  
+  case musicMic = "music.mic"
+  
+  case musicMicCircle = "music.mic.circle"
+  
+  case musicMicCircleFill = "music.mic.circle.fill"
+  
+  case goForward5 = "goforward.5"
+  
+  case goForward10 = "goforward.10"
+  
+  case goForward15 = "goforward.15"
+  
+  case goForward30 = "goforward.30"
+  
+  case goForward45 = "goforward.45"
+  
+  case goForward60 = "goforward.60"
+  
+  case gobackward5 = "gobackward.5"
+  
+  case gobackward10 = "gobackward.10"
+  
+  case gobackward15 = "gobackward.15"
+  
+  case gobackward30 = "gobackward.30"
+  
+  case gobackward45 = "gobackward.45"
+  
+  case gobackward60 = "gobackward.60"
+  
+  case swift = "swift"
+  
+  case swiftData = "swiftdata"
+  
+  case magnifyingGlass = "magnifyingglass"
+  
+  case magnifyingGlassCircle = "magnifyingglass.circle"
+  
+  case magnifyingGlassCircleFill = "magnifyingglass.circle.fill"
+  
+  case mic = "mic"
+  
+  case micFill = "mic.fill"
+  
+  case micCircle = "mic.circle"
+  
+  case micCircleFill = "mic.circle.fill"
+  
+  case micSquare = "mic.square"
+  
+  case micSquareFill = "mic.square.fill"
+  
+  case micSlash = "mic.slash"
+  
+  case micSlashFill = "mic.slash.fill"
+  
+  case micSlashCircle = "mic.slash.circle"
+  
+  case micSlashCircleFill = "mic.slash.circle.fill"
+  
+  case square = "square"
+  
+  case squareFill = "square.fill"
+  
+  case squareStack = "square.stack"
+  
+  case squareStackFill = "square.stack.fill"
+  
+  case capsule = "capsule"
+  
+  case capsuleFill = "capsule.fill"
+  
+  case triangle = "triangle"
+  
+  case triangleFill = "triangle.fill"
+  
+  case diamond = "diamond"
+  
+  case diamondFill = "diamond.fill"
+  
+  case hexagon = "hexagon"
+  
+  case hexagonFill = "hexagon.fill"
+  
+  case pentagon = "pentagon"
+  
+  case pentagonFill = "pentagon.fill"
+  
+  case seal = "seal"
+  
+  case sealFill = "seal.fill"
+  
+  case checkmarkSeal = "checkmark.seal"
+  
+  case checkmarkSealFill = "checkmark.seal.fill"
+  
+  case xmarkSeal = "xmark.seal"
+  
+  case xmarkSealFill = "xmark.seal.fill"
+  
+  case heart = "heart"
+  
+  case heartFill = "heart.fill"
+  
+  case heartCircle = "heart.circle"
+  
+  case heartCircleFill = "heart.circle.fill"
+  
+  case heartSquare = "heart.square"
+  
+  case heartSquareFill = "heart.square.fill"
+  
+  case starFill = "star.fill"
+  
+  case starCircle = "star.circle"
+  
+  case starCircleFill = "star.circle.fill"
+  
+  case shield = "shield"
+  
+  case shieldFill = "shield.fill"
+  
+  case flag = "flag"
+  
+  case flagFill = "flag.fill"
+  
+  case flagCircle = "flag.circle"
+  
+  case flagCircleFill = "flag.circle.fill"
+  
+  case location = "location"
+  
+  case locationFill = "location.fill"
+  
+  case locationCircle = "location.circle"
+  
+  case locationCircleFill = "location.circle.fill"
+  
+  case locationSquare = "location.square"
+  
+  case locationSquareFill = "location.square.fill"
+  
+  case bellFill = "bell.fill"
+  
+  case bellCircle = "bell.circle"
+  
+  case bellCircleFill = "bell.circle.fill"
+  
+  case bellSquare = "bell.square"
+  
+  case bellSquareFill = "bell.square.fill"
+  
+  case bellBadge = "bell.badge"
+  
+  case bellBadgeFill = "bell.badge.fill"
+  
+  case bellBadgeCircle = "bell.badge.circle"
+  
+  case bellBadgeCircleFill = "bell.badge.circle.fill"
+  
+  case tag = "tag"
+  
+  case tagFill = "tag.fill"
+  
+  case tagCircle = "tag.circle"
+  
+  case tagCircleFill = "tag.circle.fill"
+  
+  case tagSquare = "tag.square"
+  
+  case tagSquareFill = "tag.square.fill"
+  
+  case icloud = "icloud"
+  
+  case icloudFill = "icloud.fill"
+  
+  case icloudCircle = "icloud.circle"
+  
+  case icloudCircleFill = "icloud.circle.fill"
+  
+  case arrowClockwiseIcloud = "arrow.clockwise.icloud"
+  
+  case arrowClockwiseIcloudFill = "arrow.clockwise.icloud.fill"
+  
+  case flashlightOffFill = "flashlight.off.fill"
+  
+  case flashlightOnFill = "flashlight.on.fill"
+  
+  case camera = "camera"
+  
+  case cameraFill = "camera.fill"
+  
+  case cameraCircle = "camera.circle"
+  
+  case cameraCircleFill = "camera.circle.fill"
+  
+  case message = "message"
+  
+  case messageFill = "message.fill"
+  
+  case messageCircle = "message.circle"
+  
+  case messageCircleFill = "message.circle.fill"
+  
+  case phone = "phone"
+  
+  case phoneFill = "phone.fill"
+  
+  case phoneCircle = "phone.circle"
+  
+  case phoneCircleFill = "phone.circle.fill"
+  
+  case video = "video"
+  
+  case videoFill = "video.fill"
+  
+  case videoCircle = "video.circle"
+  
+  case videoCircleFill = "video.circle.fill"
+  
+  case videoSquare = "video.square"
+  
+  case videoSquareFill = "video.square.fill"
+  
+  case envelope = "envelope"
+  
+  case envelopeFill = "envelope.fill"
+  
+  case gear = "gear"
+  
+  case gearCircle = "gear.circle"
+  
+  case gearCircleFill = "gear.circle.fill"
+  
+  case ellipsis = "ellipsis"
+  
+  case ellipsisCircle = "ellipsis.circle"
+  
+  case ellipsisCircleFill = "ellipsis.circle.fill"
+  
+  case bag = "bag"
+  
+  case bagFill = "bag.fill"
+  
+  case bagCircle = "bag.circle"
+  
+  case bagCircleFill = "bag.circle.fill"
+  
+  case cart = "cart"
+  
+  case cartFill = "cart.fill"
+  
+  case creditcard = "creditcard"
+  
+  case creditCardFill = "creditcard.fill"
+  
+  case giftCard = "giftcard"
+  
+  case giftCardFill = "giftcard.fill"
+  
+  case printer = "printer"
+  
+  case printerFill = "printer.fill"
+  
+  case house = "house"
+  
+  case houseFill = "house.fill"
+  
+  case houseCircle = "house.circle"
+  
+  case houseCircleFill = "house.circle.fill"
+  
+  case lightbulb = "lightbulb"
+  
+  case lightbulbFill = "lightbulb.fill"
+  
+  case lightbulbMax = "lightbulb.max"
+  
+  case lightbulbMaxFill = "lightbulb.max.fill"
+  
+  case lock = "lock"
+  
+  case lockFill = "lock.fill"
+  
+  case lockRotation = "lock.rotation"
+  
+  case lockOpenRotation = "lock.open.rotation"
+  
+  case wifi = "wifi"
+  
+  case wifiCircle = "wifi.circle"
+  
+  case wifiCircleFill = "wifi.circle.fill"
+  
+  case wifiSquare = "wifi.square"
+  
+  case wifiSquareFill = "wifi.square.fill"
+  
+  case pin = "pin"
+  
+  case pinFill = "pin.fill"
+  
+  case pinCircle = "pin.circle"
+  
+  case pinCircleFill = "pin.circle.fill"
+  
+  case pinSquare = "pin.square"
+  
+  case pinSquareFill = "pin.square.fill"
+  
+  case mappin = "mappin"
+  
+  case mappinCircle = "mappin.circle"
+  
+  case mappinCircleFill = "mappin.circle.fill"
+  
+  case mappinAndEllipseCircle = "mappin.and.ellipse.circle"
+  
+  case mappinAndEllipseCircleFill = "mappin.and.ellipse.circle.fill"
+  
+  case map = "map"
+  
+  case mapFill = "map.fill"
+  
+  case mapCircle = "map.circle"
+  
+  case mapCircleFill = "map.circle.fill"
+  
+  case safari = "safari"
+  
+  case safariFill = "safari.fill"
+  
+  case rotateLeft = "rotate.left"
+  
+  case rotateLeftFill = "rotate.left.fill"
+  
+  case rotateRight = "rotate.right"
+  
+  case rotateRightFill = "rotate.right.fill"
+  case faceid = "faceid"
+  
+  case display = "display"
+  
+  case laptopcomputer = "laptopcomputer"
+  
+  case iphone = "iphone"
+  
+  case ipad = "ipad"
+  
+  case visionpro = "visionpro"
+  
+  case applewatch = "applewatch"
+  
+  case headphones = "headphones"
+  
+  case qrcodeViewFinder = "qrcode.viewfinder"
+  
+  case barcodeViewFinder = "barcode.viewfinder"
+  
+  case cameraViewFinder = "camera.viewfinder"
+  
+  case locationViewFinder = "location.viewfinder"
+  
+  case locationFillViewFinder = "location.fill.viewfinder"
+  
+  case docViewFinder = "doc.viewfinder"
+  
+  case photo = "photo"
+  
+  case photoFill = "photo.fill"
+  
+  case photoCircle = "photo.circle"
+  
+  case photoCircleFill = "photo.circle.fill"
+  
+  case clock = "clock"
+  
+  case clockFill = "clock.fill"
+  
+  case stopwatch = "stopwatch"
+  
+  case stopwatchFill = "stopwatch.fill"
+  
+  case arrowCirclePath = "arrow.circlepath"
+  
+  case cylinder = "cylinder"
+  
+  case cylinderFill = "cylinder.fill"
+  
+  case cellularbars = "cellularbars"
+  
+  case chartPie = "chart.pie"
+  
+  case chartPieFill = "chart.pie.fill"
+  
+  case waveformPath = "waveform.path"
+  
+  case waveformCircle = "waveform.circle"
+  
+  case waveformCircleFill = "waveform.circle.fill"
+  
+  case touchid = "touchid"
+  
+  case atom = "atom"
+  
+  case angle = "angle"
+  
+  case chartxyaxisLine = "chart.xyaxis.line"
+  
+  case chartLineUptrendxyaxis = "chart.line.uptrend.xyaxis"
+  
+  case chartLineDowntrendxyaxis = "chart.line.downtrend.xyaxis"
+  
+  case gift = "gift"
+  
+  case giftFill = "gift.fill"
+  
+  case giftCircle = "gift.circle"
+  
+  case giftCircleFill = "gift.circle.fill"
+  
+  case hourglassCircle = "hourglass.circle"
+  
+  case hourglassCircleFill = "hourglass.circle.fill"
+  
+  case battery100Percent = "battery.100percent"
+  
+  case battery50Percent = "battery.50percent"
+  
+  case battery100PercentBolt = "battery.100percent.bolt"
+  
+  case checklist = "checklist"
+  
+  case checklistChecked = "checklist.checked"
+  
+  case listBullet = "list.bullet"
+  
+  case listBulletCircle = "list.bullet.circle"
+  
+  case listBulletCircleFill = "list.bullet.circle.fill"
+
+  case line3HorizontalDecreaseCircle = "line.3.horizontal.decrease.circle"
+  
+  case line3HorizontalDecreaseCircleFill = "line.3.horizontal.decrease.circle.fill"
+  
+  case line3HorizontalCircle = "line.3.horizontal.circle"
+  
+  case line3HorizontalCircleFill = "line.3.horizontal.circle.fill"
+  
+  case infoCircle = "info.circle"
+  
+  case infoCircleFill = "info.circle.fill"
+  
+  case exclamationmarkCircle = "exclamationmark.circle"
+  
+  case exclamationmarkCircleFill = "exclamationmark.circle.fill"
+  
+  case plus = "plus"
+  
+  case plusCircle = "plus.circle"
+  
+  case plusCircleFill = "plus.circle.fill"
+  
+  case plusSquare = "plus.square"
+  
+  case plusSquareFill = "plus.square.fill"
+  
+  case minus = "minus"
+  
+  case minusCircle = "minus.circle"
+  
+  case minusCircleFill = "minus.circle.fill"
+  
+  case multiply = "multiply"
+  
+  case multiplyCircle = "multiply.circle"
+  
+  case multiplyCircleFill = "multiply.circle.fill"
+  
+  case xmark = "xmark"
+  
+  case xmarkCircle = "xmark.circle"
+  
+  case xmarkCircleFill = "xmark.circle.fill"
+  
+  case xmarkSquare = "xmark.square"
+  
+  case xmarkSquareFill = "xmark.square.fill"
+  
+  case checkmark = "checkmark"
+  
+  case checkmarkCircle = "checkmark.circle"
+  
+  case checkmarkCircleFill = "checkmark.circle.fill"
+  
+  case checkmarkSquare = "checkmark.square"
+  
+  case checkmarkSquareFill = "checkmark.square.fill"
+  
+  case chevronLeft = "chevron.left"
+  
+  case chevronLeftCircle = "chevron.left.circle"
+  
+  case chevronLeftCircleFill = "chevron.left.circle.fill"
+  
+  case chevronLeftSquare = "chevron.left.square"
+  
+  case chevronLeftSquareFill = "chevron.left.square.fill"
+  
+  case chevronRight = "chevron.right"
+  
+  case chevronRightCircle = "chevron.right.circle"
+  
+  case chevronRightCircleFill = "chevron.right.circle.fill"
+  
+  case chevronRightSquare = "chevron.right.square"
+  
+  case chevronRightSquareFill = "chevron.right.square.fill"
+  
+  case chevronUp = "chevron.up"
+  
+  case chevronUpCircle = "chevron.up.circle"
+  
+  case chevronUpCircleFill = "chevron.up.circle.fill"
+  
+  case chevronUpSquare = "chevron.up.square"
+  
+  case chevronUpSquareFill = "chevron.up.square.fill"
+  
+  case chevronDown = "chevron.down"
+  
+  case chevronDownCircle = "chevron.down.circle"
+  
+  case chevronDownCircleFill = "chevron.down.circle.fill"
+  
+  case chevronDownSquare = "chevron.down.square"
+  
+  case chevronDownSquareFill = "chevron.down.square.fill"
+  
+  case arrowLeft = "arrow.left"
+  
+  case arrowLeftCircle = "arrow.left.circle"
+  
+  case arrowLeftCircleFill = "arrow.left.circle.fill"
+  
+  case arrowLeftSquare = "arrow.left.square"
+  
+  case arrowLeftSquareFill = "arrow.left.square.fill"
+  
+  case arrowRight = "arrow.right"
+  
+  case arrowRightCircle = "arrow.right.circle"
+  
+  case arrowRightCircleFill = "arrow.right.circle.fill"
+  
+  case arrowRightSquare = "arrow.right.square"
+  
+  case arrowRightSquareFill = "arrow.right.square.fill"
+  
+  case arrowClockwise = "arrow.clockwise"
+  
+  case arrowClockwiseCircle = "arrow.clockwise.circle"
+  
+  case arrowClockwiseCircleFill = "arrow.clockwise.circle.fill"
+  
+  case arrowCounterClockwise = "arrow.counterclockwise"
+  
+  case arrowCounterClockwiseCircle = "arrow.counterclockwise.circle"
+  
+  case arrowCounterClockwiseCircleFill = "arrow.counterclockwise.circle.fill"
+  
+  case appleLogo = "apple.logo"
 }
+
+
+// MARK: - Symbol
+
+/*
+
+ enum Symbol: Int, CaseIterable {
+   
+     case person = 0
+     case personCircle
+     case bell
+     case star
+     case share
+     case shareCircle
+     case shareFill
+     case shareCircleFill
+     case pencil
+     case pencilCircle
+     case pencilCircleFill
+     case eraser
+     case eraserFill
+     case squarePencil
+     case squarePencilCircle
+     case pencilTip
+     case pencilTipCircle
+     case pencilTipCircleFill
+     case trash
+     case trashFill
+     case trashCircle
+     case trashCircleFill
+     case trashSquare
+     case trashSquareFill
+     case folder
+     case folderFill
+     case folderCircle
+     case folderCircleFill
+     case folderBadge
+     case folderBadgeFill
+     case folderBadgeMinus
+     case folderBadgeMinusFill
+     case paperplane
+     case paperplaneFill
+     case paperplaneCircle
+     case paperplaneCircleFill
+     case doc
+     case docFill
+     case docCircle
+     case docCircleFill
+     case docText
+     case docTextFill
+     case docOn
+     case docOnFill
+     case clipboard
+     case clipboardFill
+     case listBulletClipboard
+     case listBulletClipboardFill
+     case docPlainText
+     case docPlainTextFill
+     case note
+     case noteText
+     case calendar
+     case calendarCircle
+     case calendarClock
+     case book
+     case bookCircle
+     case bookCircleFill
+     case bookFill
+     case booksVertical
+     case booksVerticalFill
+     case booksVerticalCircle
+     case booksVerticalCircleFill
+     case bookmark
+     case bookmarkFill
+     case bookmarkCircle
+     case bookmarkCircleFill
+     case bookmarkSquare
+     case bookmarkSquareFill
+     case ruler
+     case rulerFill
+     case pencilAndRuler
+     case pencilAndRulerFill
+     case backpack
+     case backpackFill
+     case backpackCircle
+     case backpackCircleFill
+     case paperclip
+     case paperclipCircle
+     case paperclipCircleFill
+     case link
+     case linkCircle
+     case linkCircleFill
+     case personalHotspot
+     case personalHotspotCircle
+     case personalHotspotCircleFill
+     case personCircleFill
+     case personFill
+     case shareplay
+     case person2
+     case person2Fill
+     case person2Circle
+     case person2CircleFill
+     case person3
+     case person3Fill
+     case personCropCircle
+     case personCropCircleFill
+     case personCropSquare
+     case personCropSquareFill
+     case globe
+     case network
+     case sunMin
+     case sunMinFill
+     case sunMax
+     case sunMaxFill
+     case cloud
+     case cloudFill
+     case cloudRain
+     case cloudRainFill
+     case cloudBoltRain
+     case cloudBoltRainFill
+     case cloudSun
+     case cloudSunFill
+     case drop
+     case dropFill
+     case play
+     case playFill
+     case playCircle
+     case playCircleFill
+     case playSquare
+     case playSquareFill
+     case playRectangle
+     case playRectangleFill
+     case pause
+     case pauseFill
+     case pauseCircle
+     case pauseCircleFill
+     case pauseRectangle
+     case pauseRectangleFill
+     case stop
+     case stopFill
+     case stopCircle
+     case stopCircleFill
+     case recordCircle
+     case recordCircleFill
+     case playPause
+     case playPauseFill
+     case playPauseCircle
+     case playPauseCircleFill
+     case backward
+     case backwardFill
+     case backwardCircle
+     case backwardCircleFill
+     case forward
+     case forwardFill
+     case forwardCircle
+     case forwardCircleFill
+     case backwardEnd
+     case backwardEndFill
+     case forwardEnd
+     case forwardEndFill
+     case infinity
+     case infinityCircle
+     case sos
+     case sosCircle
+     case sosCircleFill
+     case speaker
+     case speakerFill
+     case speakerSquare
+     case speakerSquareFill
+     case speakerPlus
+     case speakerPlusFill
+     case speakerMinus
+     case speakerMinusFill
+     case speakerWave3
+     case speakerWave3Fill
+     case musicNote
+     case musicNoteList
+     case musicMic
+     case musicMicCircle
+     case musicMicCircleFill
+     case goForward5
+     case goForward10
+     case goForward15
+     case goForward30
+     case goForward45
+     case goForward60
+     case gobackward5
+     case gobackward10
+     case gobackward15
+     case gobackward30
+     case gobackward45
+     case gobackward60
+     case swift
+     case swiftData
+     case magnifyingGlass
+     case magnifyingGlassCircle
+     case magnifyingGlassCircleFill
+     case mic
+     case micFill
+     case micCircle
+     case micCircleFill
+     case micSquare
+     case micSquareFill
+     case micSlash
+     case micSlashFill
+     case micSlashCircle
+     case micSlashCircleFill
+     case square
+     case squareFill
+     case squareStack
+     case squareStackFill
+     case capsule
+     case capsuleFill
+     case triangle
+     case triangleFill
+     case diamond
+     case diamondFill
+     case hexagon
+     case hexagonFill
+     case pentagon
+     case pentagonFill
+     case seal
+     case sealFill
+     case checkmarkSeal
+     case checkmarkSealFill
+     case xmarkSeal
+     case xmarkSealFill
+     case heart
+     case heartFill
+     case heartCircle
+     case heartCircleFill
+     case heartSquare
+     case heartSquareFill
+     case starFill
+     case starCircle
+     case starCircleFill
+     case shield
+     case shieldFill
+     case flag
+     case flagFill
+     case flagCircle
+     case flagCircleFill
+     case location
+     case locationFill
+     case locationCircle
+     case locationCircleFill
+     case locationSquare
+     case locationSquareFill
+     case bellFill
+     case bellCircle
+     case bellCircleFill
+     case bellSquare
+     case bellSquareFill
+     case bellBadge
+     case bellBadgeFill
+     case bellBadgeCircle
+     case bellBadgeCircleFill
+     case tag
+     case tagFill
+     case tagCircle
+     case tagCircleFill
+     case tagSquare
+     case tagSquareFill
+     case icloud
+     case icloudFill
+     case icloudCircle
+     case icloudCircleFill
+     case arrowClockwiseIcloud
+     case arrowClockwiseIcloudFill
+     case flashlightOffFill
+     case flashlightOnFill
+     case camera
+     case cameraFill
+     case cameraCircle
+     case cameraCircleFill
+     case message
+     case messageFill
+     case messageCircle
+     case messageCircleFill
+     case phone
+     case phoneFill
+     case phoneCircle
+     case phoneCircleFill
+     case video
+     case videoFill
+     case videoCircle
+     case videoCircleFill
+     case videoSquare
+     case videoSquareFill
+     case envelope
+     case envelopeFill
+     case gear
+     case gearCircle
+     case gearCircleFill
+     case ellipsis
+     case ellipsisCircle
+     case ellipsisCircleFill
+     case bag
+     case bagFill
+     case bagCircle
+     case bagCircleFill
+     case cart
+     case cartFill
+     case creditcard
+     case creditCardFill
+     case giftCard
+     case giftCardFill
+     case printer
+     case printerFill
+     case house
+     case houseFill
+     case houseCircle
+     case houseCircleFill
+     case lightbulb
+     case lightbulbFill
+     case lightbulbMax
+     case lightbulbMaxFill
+     case lock
+     case lockFill
+     case lockRotation
+     case lockOpenRotation
+     case wifi
+     case wifiCircle
+     case wifiCircleFill
+     case wifiSquare
+     case wifiSquareFill
+     case pin
+     case pinFill
+     case pinCircle
+     case pinCircleFill
+     case pinSquare
+     case pinSquareFill
+     case mappin
+     case mappinCircle
+     case mappinCircleFill
+     case mappinAndEllipseCircle
+     case mappinAndEllipseCircleFill
+     case map
+     case mapFill
+     case mapCircle
+     case mapCircleFill
+     case safari
+     case safariFill
+     case rotateLeft
+     case rotateLeftFill
+     case rotateRight
+     case rotateRightFill
+     case faceid
+     case display
+     case laptopcomputer
+     case iphone
+     case ipad
+     case visionpro
+     case applewatch
+     case headphones
+     case qrcodeViewFinder
+     case barcodeViewFinder
+     case cameraViewFinder
+     case locationViewFinder
+     case locationFillViewFinder
+     case docViewFinder
+     case photo
+     case photoFill
+     case photoCircle
+     case photoCircleFill
+     case clock
+     case clockFill
+     case stopwatch
+     case stopwatchFill
+     case arrowCirclePath
+     case cylinder
+     case cylinderFill
+     case cellularbars
+     case chartPie
+     case chartPieFill
+     case waveformPath
+     case waveformCircle
+     case waveformCircleFill
+     case touchid
+     case atom
+     case angle
+     case chartxyaxisLine
+     case chartLineUptrendxyaxis
+     case chartLineDowntrendxyaxis
+     case gift
+     case giftFill
+     case giftCircle
+     case giftCircleFill
+     case hourglassCircle
+     case hourglassCircleFill
+     case battery100Percent
+     case battery50Percent
+     case battery100PercentBolt
+     case checklist
+     case checklistChecked
+     case listBullet
+     case listBulletCircle
+     case listBulletCircleFill
+     case line3HorizontalDecreaseCircle
+     case line3HorizontalDecreaseCircleFill
+     case line3HorizontalCircle
+     case line3HorizontalCircleFill
+     case infoCircle
+     case infoCircleFill
+     case exclamationmarkCircle
+     case exclamationmarkCircleFill
+     case plus
+     case plusCircle
+     case plusCircleFill
+     case plusSquare
+     case plusSquareFill
+     case minus
+     case minusCircle
+     case minusCircleFill
+     case multiply
+     case multiplyCircle
+     case multiplyCircleFill
+     case xmark
+     case xmarkCircle
+     case xmarkCircleFill
+     case xmarkSquare
+     case xmarkSquareFill
+     case checkmark
+     case checkmarkCircle
+     case checkmarkCircleFill
+     case checkmarkSquare
+     case checkmarkSquareFill
+     case chevronLeft
+     case chevronLeftCircle
+     case chevronLeftCircleFill
+     case chevronLeftSquare
+     case chevronLeftSquareFill
+     case chevronRight
+     case chevronRightCircle
+     case chevronRightCircleFill
+     case chevronRightSquare
+     case chevronRightSquareFill
+     case chevronUp
+     case chevronUpCircle
+     case chevronUpCircleFill
+     case chevronUpSquare
+     case chevronUpSquareFill
+     case chevronDown
+     case chevronDownCircle
+     case chevronDownCircleFill
+     case chevronDownSquare
+     case chevronDownSquareFill
+     case arrowLeft
+     case arrowLeftCircle
+     case arrowLeftCircleFill
+     case arrowLeftSquare
+     case arrowLeftSquareFill
+     case arrowRight
+     case arrowRightCircle
+     case arrowRightCircleFill
+     case arrowRightSquare
+     case arrowRightSquareFill
+     case arrowClockwise
+     case arrowClockwiseCircle
+     case arrowClockwiseCircleFill
+     case arrowCounterClockwise
+     case arrowCounterClockwiseCircle
+     case arrowCounterClockwiseCircleFill
+     case appleLogo
+   
+   var title: String {
+     switch self {
+     case .person: return "person"
+     case .personCircle: return "person.circle"
+     case .bell: return "bell"
+     case .star: return "star"
+     case .share: return "square.and.arrow.up"
+     case .shareCircle: return "square.and.arrow.up.circle"
+     case .shareFill: return "square.and.arrow.up.fill"
+     case .shareCircleFill: return "square.and.arrow.up.circle.fill"
+     case .pencil: return "pencil"
+     case .pencilCircle: return "pencil.circle"
+     case .pencilCircleFill: return "pencil.circle.fill"
+     case .eraser: return "eraser"
+     case .eraserFill: return "eraser.fill"
+     case .squarePencil: return "square.and.pencil"
+     case .squarePencilCircle: return "square.and.pencil.circle"
+     case .pencilTip: return "pencil.tip"
+     case .pencilTipCircle: return "pencil.tip.crop.circle"
+     case .pencilTipCircleFill: return "pencil.tip.crop.circle.fill"
+     case .trash: return "trash"
+     case .trashFill: return "trash.fill"
+     case .trashCircle: return "trash.circle"
+     case .trashCircleFill: return "trash.circle.fill"
+     case .trashSquare: return "trash.square"
+     case .trashSquareFill: return "trash.square.fill"
+     case .folder: return "folder"
+     case .folderFill: return "folder.fill"
+     case .folderCircle: return "folder.circle"
+     case .folderCircleFill: return "folder.circle.fill"
+     case .folderBadge: return "folder.badge.plus"
+     case .folderBadgeFill: return "folder.fill.badge.plus"
+     case .folderBadgeMinus: return "folder.badge.minus"
+     case .folderBadgeMinusFill: return "folder.fill.badge.minus"
+     case .paperplane: return "paperplane"
+     case .paperplaneFill: return "paperplane.fill"
+     case .paperplaneCircle: return "paperplane.circle"
+     case .paperplaneCircleFill: return "paperplane.circle.fill"
+     case .doc: return "doc"
+     case .docFill: return "doc.fill"
+     case .docCircle: return "doc.circle"
+     case .docCircleFill: return "doc.circle.fill"
+     case .docText: return "doc.text"
+     case .docTextFill: return "doc.text.fill"
+     case .docOn: return "doc.on.doc"
+     case .docOnFill: return "doc.on.doc.fill"
+     case .clipboard: return "clipboard"
+     case .clipboardFill: return "clipboard.fill"
+     case .listBulletClipboard: return "list.bullet.clipboard"
+     case .listBulletClipboardFill: return "list.bullet.clipboard.fill"
+     case .docPlainText: return "doc.plaintext"
+     case .docPlainTextFill: return "doc.plaintext.fill"
+     case .note: return "note"
+     case .noteText: return "note.text"
+     case .calendar: return "calendar"
+     case .calendarCircle: return "calendar.circle"
+     case .calendarClock: return "calendar.badge.clock"
+     case .book: return "book"
+     case .bookCircle: return "book.circle"
+     case .bookCircleFill: return "book.circle.fill"
+     case .bookFill: return "book.fill"
+     case .booksVertical: return "books.vertical"
+     case .booksVerticalFill: return "books.vertical.fill"
+     case .booksVerticalCircle: return "books.vertical.circle"
+     case .booksVerticalCircleFill: return "books.vertical.circle.fill"
+     case .bookmark: return "bookmark"
+     case .bookmarkFill: return "bookmark.fill"
+     case .bookmarkCircle: return "bookmark.circle"
+     case .bookmarkCircleFill: return "bookmark.circle.fill"
+     case .bookmarkSquare: return "bookmark.square"
+     case .bookmarkSquareFill: return "bookmark.square.fill"
+     case .ruler: return "ruler"
+     case .rulerFill: return "ruler.fill"
+     case .pencilAndRuler: return "pencil.and.ruler"
+     case .pencilAndRulerFill: return "pencil.and.ruler.fill"
+     case .backpack: return "backpack"
+     case .backpackFill: return "backpack.fill"
+     case .backpackCircle: return "backpack.circle"
+     case .backpackCircleFill: return "backpack.circle.fill"
+     case .paperclip: return "paperclip"
+     case .paperclipCircle: return "paperclip.circle"
+     case .paperclipCircleFill: return "paperclip.circle.fill"
+     case .link: return "link"
+     case .linkCircle: return "link.circle"
+     case .linkCircleFill: return "link.circle.fill"
+     case .personalHotspot: return "personalhotspot"
+     case .personalHotspotCircle: return "personalhotspot.circle"
+     case .personalHotspotCircleFill: return "personalhotspot.circle.fill"
+     case .personCircleFill: return "person.circle.fill"
+     case .personFill: return "person.fill"
+     case .shareplay: return "shareplay"
+     case .person2: return "person.2"
+     case .person2Fill: return "person.2.fill"
+     case .person2Circle: return "person.2.circle"
+     case .person2CircleFill: return "person.2.circle.fill"
+     case .person3: return "person.3"
+     case .person3Fill: return "person.3.fill"
+     case .personCropCircle: return "person.crop.circle"
+     case .personCropCircleFill: return "person.crop.circle.fill"
+     case .personCropSquare: return "person.crop.square"
+     case .personCropSquareFill: return "person.crop.square.fill"
+     case .globe: return "globe"
+     case .network: return "network"
+     case .sunMin: return "sun.min"
+     case .sunMinFill: return "sun.min.fill"
+     case .sunMax: return "sun.max"
+     case .sunMaxFill: return "sun.max.fill"
+     case .cloud: return "cloud"
+     case .cloudFill: return "cloud.fill"
+     case .cloudRain: return "cloud.rain"
+     case .cloudRainFill: return "cloud.rain.fill"
+     case .cloudBoltRain: return "cloud.bolt.rain"
+     case .cloudBoltRainFill: return "cloud.bolt.rain.fill"
+     case .cloudSun: return "cloud.sun"
+     case .cloudSunFill: return "cloud.sun.fill"
+     case .drop: return "drop"
+     case .dropFill: return "drop.fill"
+     case .play: return "play"
+     case .playFill: return "play.fill"
+     case .playCircle: return "play.circle"
+     case .playCircleFill: return "play.circle.fill"
+     case .playSquare: return "play.square"
+     case .playSquareFill: return "play.square.fill"
+     case .playRectangle: return "play.rectangle"
+     case .playRectangleFill: return "play.rectangle.fill"
+     case .pause: return "pause"
+     case .pauseFill: return "pause.fill"
+     case .pauseCircle: return "pause.circle"
+     case .pauseCircleFill: return "pause.circle.fill"
+     case .pauseRectangle: return "pause.rectangle"
+     case .pauseRectangleFill: return "pause.rectangle.fill"
+     case .stop: return "stop"
+     case .stopFill: return "stop.fill"
+     case .stopCircle: return "stop.circle"
+     case .stopCircleFill: return "stop.circle.fill"
+     case .recordCircle: return "record.circle"
+     case .recordCircleFill: return "record.circle.fill"
+     case .playPause: return "playpause"
+     case .playPauseFill: return "playpause.fill"
+     case .playPauseCircle: return "playpause.circle"
+     case .playPauseCircleFill: return "playpause.circle.fill"
+     case .backward: return "backward"
+     case .backwardFill: return "backward.fill"
+     case .backwardCircle: return "backward.circle"
+     case .backwardCircleFill: return "backward.circle.fill"
+     case .forward: return "forward"
+     case .forwardFill: return "forward.fill"
+     case .forwardCircle: return "forward.circle"
+     case .forwardCircleFill: return "forward.circle.fill"
+     case .backwardEnd: return "backward.end"
+     case .backwardEndFill: return "backward.end.fill"
+     case .forwardEnd: return "forward.end"
+     case .forwardEndFill: return "forward.end.fill"
+     case .infinity: return "infinity"
+     case .infinityCircle: return "infinity.circle"
+     case .sos: return "SOS"
+     case .sosCircle: return "sos.circle"
+     case .sosCircleFill: return "sos.circle.fill"
+     case .speaker: return "speaker"
+     case .speakerFill: return "speaker.fill"
+     case .speakerSquare: return "speaker.square"
+     case .speakerSquareFill: return "speaker.square.fill"
+     case .speakerPlus: return "speaker.plus"
+     case .speakerPlusFill: return "speaker.plus.fill"
+     case .speakerMinus: return "speaker.minus"
+     case .speakerMinusFill: return "speaker.minus.Fill"
+     case .speakerWave3: return "speaker.wave.3"
+     case .speakerWave3Fill: return "speaker.wave.3.fill"
+     case .musicNote: return "music.note"
+     case .musicNoteList: return "music.note.list"
+     case .musicMic: return "music.mic"
+     case .musicMicCircle: return "music.mic.circle"
+     case .musicMicCircleFill: return "music.mic.circle.fill"
+     case .goForward5: return "goforward.5"
+     case .goForward10: return "goforward.10"
+     case .goForward15: return "goforward.15"
+     case .goForward30: return "goforward.30"
+     case .goForward45: return "goforward.45"
+     case .goForward60: return "goforward.60"
+     case .gobackward5: return "gobackward.5"
+     case .gobackward10: return "gobackward.10"
+     case .gobackward15: return "gobackward.15"
+     case .gobackward30: return "gobackward.30"
+     case .gobackward45: return "gobackward.45"
+     case .gobackward60: return "gobackward.60"
+     case .swift: return "swift"
+     case .swiftData: return "swiftdata"
+     case .magnifyingGlass: return "magnifyingglass"
+     case .magnifyingGlassCircle: return "magnifyingglass.circle"
+     case .magnifyingGlassCircleFill: return "magnifyingglass.circle.fill"
+     case .mic: return "mic"
+     case .micFill: return "mic.fill"
+     case .micCircle: return "mic.circle"
+     case .micCircleFill: return "mic.circle.fill"
+     case .micSquare: return "mic.square"
+     case .micSquareFill: return "mic.square.fill"
+     case .micSlash: return "mic.slash"
+     case .micSlashFill: return "mic.slash.fill"
+     case .micSlashCircle: return "mic.slash.circle"
+     case .micSlashCircleFill: return "mic.slash.circle.fill"
+     case .square: return "square"
+     case .squareFill: return "square.fill"
+     case .squareStack: return "square.stack"
+     case .squareStackFill: return "square.stack.fill"
+     case .capsule: return "capsule"
+     case .capsuleFill: return "capsule.fill"
+     case .triangle: return "triangle"
+     case .triangleFill: return "triangle.fill"
+     case .diamond: return "diamond"
+     case .diamondFill: return "diamond.fill"
+     case .hexagon: return "hexagon"
+     case .hexagonFill: return "hexagon.fill"
+     case .pentagon: return "pentagon"
+     case .pentagonFill: return "pentagon.fill"
+     case .seal: return "seal"
+     case .sealFill: return "seal.fill"
+     case .checkmarkSeal: return "checkmark.seal"
+     case .checkmarkSealFill: return "checkmark.seal.fill"
+     case .xmarkSeal: return "xmark.seal"
+     case .xmarkSealFill: return "xmark.seal.fill"
+     case .heart: return "heart"
+     case .heartFill: return "heart.fill"
+     case .heartCircle: return "heart.circle"
+     case .heartCircleFill: return "heart.circle.fill"
+     case .heartSquare: return "heart.square"
+     case .heartSquareFill: return "heart.square.fill"
+     case .starFill: return "star.fill"
+     case .starCircle: return "star.circle"
+     case .starCircleFill: return "star.circle.fill"
+     case .shield: return "shield"
+     case .shieldFill: return "shield.fill"
+     case .flag: return "flag"
+     case .flagFill: return "flag.fill"
+     case .flagCircle: return "flag.circle"
+     case .flagCircleFill: return "flag.circle.fill"
+     case .location: return "location"
+     case .locationFill: return "location.fill"
+     case .locationCircle: return "location.circle"
+     case .locationCircleFill: return "location.circle.fill"
+     case .locationSquare: return "location.square"
+     case .locationSquareFill: return "location.square.fill"
+     case .bellFill: return "bell.fill"
+     case .bellCircle: return "bell.circle"
+     case .bellCircleFill: return "bell.circle.fill"
+     case .bellSquare: return "bell.square"
+     case .bellSquareFill: return "bell.square.fill"
+     case .bellBadge: return "bell.badge"
+     case .bellBadgeFill: return "bell.badge.fill"
+     case .bellBadgeCircle: return "bell.badge.circle"
+     case .bellBadgeCircleFill: return "bell.badge.circle.fill"
+     case .tag: return "tag"
+     case .tagFill: return "tag.fill"
+     case .tagCircle: return "tag.circle"
+     case .tagCircleFill: return "tag.circle.fill"
+     case .tagSquare: return "tag.square"
+     case .tagSquareFill: return "tag.square.fill"
+     case .icloud: return "icloud"
+     case .icloudFill: return "icloud.fill"
+     case .icloudCircle: return "icloud.circle"
+     case .icloudCircleFill: return "icloud.circle.fill"
+     case .arrowClockwiseIcloud: return "arrow.clockwise.icloud"
+     case .arrowClockwiseIcloudFill: return "arrow.clockwise.icloud.fill"
+     case .flashlightOffFill: return "flashlight.off.fill"
+     case .flashlightOnFill: return "flashlight.on.fill"
+     case .camera: return "camera"
+     case .cameraFill: return "camera.fill"
+     case .cameraCircle: return "camera.circle"
+     case .cameraCircleFill: return "camera.circle.fill"
+     case .message: return "message"
+     case .messageFill: return "message.fill"
+     case .messageCircle: return "message.circle"
+     case .messageCircleFill: return "message.circle.fill"
+     case .phone: return "phone"
+     case .phoneFill: return "phone.fill"
+     case .phoneCircle: return "phone.circle"
+     case .phoneCircleFill: return "phone.circle.fill"
+     case .video: return "video"
+     case .videoFill: return "video.fill"
+     case .videoCircle: return "video.circle"
+     case .videoCircleFill: return "video.circle.fill"
+     case .videoSquare: return "video.square"
+     case .videoSquareFill: return "video.square.fill"
+     case .envelope: return "envelope"
+     case .envelopeFill: return "envelope.fill"
+     case .gear: return "gear"
+     case .gearCircle: return "gear.circle"
+     case .gearCircleFill: return "gear.circle.fill"
+     case .ellipsis: return "ellipsis"
+     case .ellipsisCircle: return "ellipsis.circle"
+     case .ellipsisCircleFill: return "ellipsis.circle.fill"
+     case .bag: return "bag"
+     case .bagFill: return "bag.fill"
+     case .bagCircle: return "bag.circle"
+     case .bagCircleFill: return "bag.circle.fill"
+     case .cart: return "cart"
+     case .cartFill: return "cart.fill"
+     case .creditcard: return "creditcard"
+     case .creditCardFill: return "creditcard.fill"
+     case .giftCard: return "giftcard"
+     case .giftCardFill: return "giftcard.fill"
+     case .printer: return "printer"
+     case .printerFill: return "printer.fill"
+     case .house: return "house"
+     case .houseFill: return "house.fill"
+     case .houseCircle: return "house.circle"
+     case .houseCircleFill: return "house.circle.fill"
+     case .lightbulb: return "lightbulb"
+     case .lightbulbFill: return "lightbulb.fill"
+     case .lightbulbMax: return "lightbulb.max"
+     case .lightbulbMaxFill: return "lightbulb.max.fill"
+     case .lock: return "lock"
+     case .lockFill: return "lock.fill"
+     case .lockRotation: return "lock.rotation"
+     case .lockOpenRotation: return "lock.open.rotation"
+     case .wifi: return "wifi"
+     case .wifiCircle: return "wifi.circle"
+     case .wifiCircleFill: return "wifi.circle.fill"
+     case .wifiSquare: return "wifi.square"
+     case .wifiSquareFill: return "wifi.square.fill"
+     case .pin: return "pin"
+     case .pinFill: return "pin.fill"
+     case .pinCircle: return "pin.circle"
+     case .pinCircleFill: return "pin.circle.fill"
+     case .pinSquare: return "pin.square"
+     case .pinSquareFill: return "pin.square.fill"
+     case .mappin: return "mappin"
+     case .mappinCircle: return "mappin.circle"
+     case .mappinCircleFill: return "mappin.circle.fill"
+     case .mappinAndEllipseCircle: return "mappin.and.ellipse.circle"
+     case .mappinAndEllipseCircleFill: return "mappin.and.ellipse.circle.fill"
+     case .map: return "map"
+     case .mapFill: return "map.fill"
+     case .mapCircle: return "map.circle"
+     case .mapCircleFill: return "map.circle.fill"
+     case .safari: return "safari"
+     case .safariFill: return "safari.fill"
+     case .rotateLeft: return "rotate.left"
+     case .rotateLeftFill: return "rotate.left.fill"
+     case .rotateRight: return "rotate.right"
+     case .rotateRightFill: return "rotate.right.fill"
+     case .faceid: return "faceid"
+     case .display: return "display"
+     case .laptopcomputer: return "laptopcomputer"
+     case .iphone: return "iphone"
+     case .ipad: return "ipad"
+     case .visionpro: return "visionpro"
+     case .applewatch: return "applewatch"
+     case .headphones: return "headphones"
+     case .qrcodeViewFinder: return "qrcode.viewfinder"
+     case .barcodeViewFinder: return "barcode.viewfinder"
+     case .cameraViewFinder: return "camera.viewfinder"
+     case .locationViewFinder: return "location.viewfinder"
+     case .locationFillViewFinder: return "location.fill.viewfinder"
+     case .docViewFinder: return "doc.viewfinder"
+     case .photo: return "photo"
+     case .photoFill: return "photo.fill"
+     case .photoCircle: return "photo.circle"
+     case .photoCircleFill: return "photo.circle.fill"
+     case .clock: return "clock"
+     case .clockFill: return "clock.fill"
+     case .stopwatch: return "stopwatch"
+     case .stopwatchFill: return "stopwatch.fill"
+     case .arrowCirclePath: return "arrow.circlepath"
+     case .cylinder: return "cylinder"
+     case .cylinderFill: return "cylinder.fill"
+     case .cellularbars: return "cellularbars"
+     case .chartPie: return "chart.pie"
+     case .chartPieFill: return "chart.pie.fill"
+     case .waveformPath: return "waveform.path"
+     case .waveformCircle: return "waveform.circle"
+     case .waveformCircleFill: return "waveform.circle.fill"
+     case .touchid: return "touchid"
+     case .atom: return "atom"
+     case .angle: return "angle"
+     case .chartxyaxisLine: return "chart.xyaxis.line"
+     case .chartLineUptrendxyaxis: return "chart.line.uptrend.xyaxis"
+     case .chartLineDowntrendxyaxis: return "chart.line.downtrend.xyaxis"
+     case .gift: return "gift"
+     case .giftFill: return "gift.fill"
+     case .giftCircle: return "gift.circle"
+     case .giftCircleFill: return "gift.circle.fill"
+     case .hourglassCircle: return "hourglass.circle"
+     case .hourglassCircleFill: return "hourglass.circle.fill"
+     case .battery100Percent: return "battery.100percent"
+     case .battery50Percent: return "battery.50percent"
+     case .battery100PercentBolt: return "battery.100percent.bolt"
+     case .checklist: return "checklist"
+     case .checklistChecked: return "checklist.checked"
+     case .listBullet: return "list.bullet"
+     case .listBulletCircle: return "list.bullet.circle"
+     case .listBulletCircleFill: return "list.bullet.circle.fill"
+     case .line3HorizontalDecreaseCircle: return "line.3.horizontal.decrease.circle"
+     case .line3HorizontalDecreaseCircleFill: return "line.3.horizontal.decrease.circle.fill"
+     case .line3HorizontalCircle: return "line.3.horizontal.circle"
+     case .line3HorizontalCircleFill: return "line.3.horizontal.circle.fill"
+     case .infoCircle: return "info.circle"
+     case .infoCircleFill: return "info.circle.fill"
+     case .exclamationmarkCircle: return "exclamationmark.circle"
+     case .exclamationmarkCircleFill: return "exclamationmark.circle.fill"
+     case .plus: return "plus"
+     case .plusCircle: return "plus.circle"
+     case .plusCircleFill: return "plus.circle.fill"
+     case .plusSquare: return "plus.square"
+     case .plusSquareFill: return "plus.square.fill"
+     case .minus: return "minus"
+     case .minusCircle: return "minus.circle"
+     case .minusCircleFill: return "minus.circle.fill"
+     case .multiply: return "multiply"
+     case .multiplyCircle: return "multiply.circle"
+     case .multiplyCircleFill: return "multiply.circle.fill"
+     case .xmark: return "xmark"
+     case .xmarkCircle: return "xmark.circle"
+     case .xmarkCircleFill: return "xmark.circle.fill"
+     case .xmarkSquare: return "xmark.square"
+     case .xmarkSquareFill: return "xmark.square.fill"
+     case .checkmark: return "checkmark"
+     case .checkmarkCircle: return "checkmark.circle"
+     case .checkmarkCircleFill: return "checkmark.circle.fill"
+     case .checkmarkSquare: return "checkmark.square"
+     case .checkmarkSquareFill: return "checkmark.square.fill"
+     case .chevronLeft: return "chevron.left"
+     case .chevronLeftCircle: return "chevron.left.circle"
+     case .chevronLeftCircleFill: return "chevron.left.circle.fill"
+     case .chevronLeftSquare: return "chevron.left.square"
+     case .chevronLeftSquareFill: return "chevron.left.square.fill"
+     case .chevronRight: return "chevron.right"
+     case .chevronRightCircle: return "chevron.right.circle"
+     case .chevronRightCircleFill: return "chevron.right.circle.fill"
+     case .chevronRightSquare: return "chevron.right.square"
+     case .chevronRightSquareFill: return "chevron.right.square.fill"
+     case .chevronUp: return "chevron.up"
+     case .chevronUpCircle: return "chevron.up.circle"
+     case .chevronUpCircleFill: return "chevron.up.circle.fill"
+     case .chevronUpSquare: return "chevron.up.square"
+     case .chevronUpSquareFill: return "chevron.up.square.fill"
+     case .chevronDown: return "chevron.down"
+     case .chevronDownCircle: return "chevron.down.circle"
+     case .chevronDownCircleFill: return "chevron.down.circle.fill"
+     case .chevronDownSquare: return "chevron.down.square"
+     case .chevronDownSquareFill: return "chevron.down.square.fill"
+     case .arrowLeft: return "arrow.left"
+     case .arrowLeftCircle: return "arrow.left.circle"
+     case .arrowLeftCircleFill: return "arrow.left.circle.fill"
+     case .arrowLeftSquare: return "arrow.left.square"
+     case .arrowLeftSquareFill: return "arrow.left.square.fill"
+     case .arrowRight: return "arrow.right"
+     case .arrowRightCircle: return "arrow.right.circle"
+     case .arrowRightCircleFill: return "arrow.right.circle.fill"
+     case .arrowRightSquare: return "arrow.right.square"
+     case .arrowRightSquareFill: return "arrow.right.square.fill"
+     case .arrowClockwise: return "arrow.clockwise"
+     case .arrowClockwiseCircle: return "arrow.clockwise.circle"
+     case .arrowClockwiseCircleFill: return "arrow.clockwise.circle.fill"
+     case .arrowCounterClockwise: return "arrow.counterclockwise"
+     case .arrowCounterClockwiseCircle: return "arrow.counterclockwise.circle"
+     case .arrowCounterClockwiseCircleFill: return "arrow.counterclockwise.circle.fill"
+     case .appleLogo: return "apple.logo"
+     }
+   }
+   
+   var image: PlatformImage {
+     PlatformImage(systemName: title) ?? PlatformImage.add
+   }
+  
+  static var allCases: [UIImage] {
+    Symbol.allCases.map { UIImage(systemName: $0.rawValue) ?? .add }
+  }
+ }
+ */
