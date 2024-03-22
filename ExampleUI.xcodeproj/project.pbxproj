@@ -10,7 +10,7 @@
 		3DEFA3732B9C8F4D00ED17B9 /* CustomButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3722B9C8F4D00ED17B9 /* CustomButtonVC.swift */; };
 		3DEFA3752B9C8F8200ED17B9 /* CustomStackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3742B9C8F8200ED17B9 /* CustomStackVC.swift */; };
 		3DEFA3772B9C8FD900ED17B9 /* CustomDatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3762B9C8FD900ED17B9 /* CustomDatePickerVC.swift */; };
-		3DEFA3792B9C901200ED17B9 /* CustomCalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3782B9C901200ED17B9 /* CustomCalenderVC.swift */; };
+		3DEFA3792B9C901200ED17B9 /* CustomCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3782B9C901200ED17B9 /* CustomCalendarVC.swift */; };
 		3DEFA37B2B9C904900ED17B9 /* CustomPhotoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA37A2B9C904900ED17B9 /* CustomPhotoPickerVC.swift */; };
 		3DEFA37D2B9C908300ED17B9 /* CustomVideoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA37C2B9C908300ED17B9 /* CustomVideoPickerVC.swift */; };
 		3DEFA37F2B9C90BE00ED17B9 /* CustomMoveItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA37E2B9C90BE00ED17B9 /* CustomMoveItemVC.swift */; };
@@ -74,7 +74,7 @@
 		3DEFA3722B9C8F4D00ED17B9 /* CustomButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonVC.swift; sourceTree = "<group>"; };
 		3DEFA3742B9C8F8200ED17B9 /* CustomStackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackVC.swift; sourceTree = "<group>"; };
 		3DEFA3762B9C8FD900ED17B9 /* CustomDatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerVC.swift; sourceTree = "<group>"; };
-		3DEFA3782B9C901200ED17B9 /* CustomCalenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalenderVC.swift; sourceTree = "<group>"; };
+		3DEFA3782B9C901200ED17B9 /* CustomCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarVC.swift; sourceTree = "<group>"; };
 		3DEFA37A2B9C904900ED17B9 /* CustomPhotoPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoPickerVC.swift; sourceTree = "<group>"; };
 		3DEFA37C2B9C908300ED17B9 /* CustomVideoPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPickerVC.swift; sourceTree = "<group>"; };
 		3DEFA37E2B9C90BE00ED17B9 /* CustomMoveItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMoveItemVC.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				3DEFA3722B9C8F4D00ED17B9 /* CustomButtonVC.swift */,
 				3DEFA3742B9C8F8200ED17B9 /* CustomStackVC.swift */,
 				3DEFA3762B9C8FD900ED17B9 /* CustomDatePickerVC.swift */,
-				3DEFA3782B9C901200ED17B9 /* CustomCalenderVC.swift */,
+				3DEFA3782B9C901200ED17B9 /* CustomCalendarVC.swift */,
 				3DEFA37A2B9C904900ED17B9 /* CustomPhotoPickerVC.swift */,
 				3DEFA37C2B9C908300ED17B9 /* CustomVideoPickerVC.swift */,
 				3DEFA37E2B9C90BE00ED17B9 /* CustomMoveItemVC.swift */,
@@ -357,7 +357,7 @@
 				3DEFA3A32B9C953700ED17B9 /* CustomMenuVC.swift in Sources */,
 				9DE57BBF2B6A0005004C3DCB /* UITextViewExtensions.swift in Sources */,
 				3DEFA3A72B9C95AD00ED17B9 /* CustomNavigationVC.swift in Sources */,
-				3DEFA3792B9C901200ED17B9 /* CustomCalenderVC.swift in Sources */,
+				3DEFA3792B9C901200ED17B9 /* CustomCalendarVC.swift in Sources */,
 				9D057E3A2B68A1840042D6D9 /* CustomImageView.swift in Sources */,
 				3DEFA39F2B9C94C600ED17B9 /* CustomSheetVC.swift in Sources */,
 				9D057E382B6891C10042D6D9 /* AvatarImage.swift in Sources */,
