@@ -61,7 +61,7 @@ enum ViewCoordinator: CaseIterable {
     case .button: return CustomButtonVC()
     case .stack: return CustomStackVC()
     case .datePicker: return CustomDatePickerVC()
-    case .calender: return CustomCalenderVC()
+    case .calender: return CustomCalendarVC()
     case .photoPicker: return CustomPhotoPickerVC()
     case .videoPicker: return CustomVideoPickerVC()
     case .moveItem: return CustomMoveItemVC()
