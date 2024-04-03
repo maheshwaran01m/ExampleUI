@@ -64,4 +64,11 @@ extension UIColor {
   public func opacity(_ value: CGFloat) -> UIColor {
     withAlphaComponent(value)
   }
+  
+  var disabled: UIColor {
+    let selector = NSSelectorFromString("_disabledColorForColor:")
+    let color = perform(selector, with: self).takeUnretainedValue()
+    
+    return color as? UIColor ?? self
+  }
 }

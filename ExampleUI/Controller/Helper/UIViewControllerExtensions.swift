@@ -26,4 +26,13 @@ extension UIViewController {
   var presenterVC: UIViewController {
     parent?.presenterVC ?? parent ?? self
   }
+  
+  static func newInstance() -> Self {
+    Self(nibName: "\(self)", bundle: nil)
+  }
+  
+  func enableLargeTitles(_ enable: Bool) {
+    navigationController?.navigationBar.prefersLargeTitles = enable
+    navigationItem.largeTitleDisplayMode = enable ? .always : .never
+  }
 }
