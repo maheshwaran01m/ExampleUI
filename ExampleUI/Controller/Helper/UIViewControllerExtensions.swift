@@ -35,4 +35,8 @@ extension UIViewController {
     navigationController?.navigationBar.prefersLargeTitles = enable
     navigationItem.largeTitleDisplayMode = enable ? .always : .never
   }
+  
+  func hideBackButton() {
+    navigationItem.setHidesBackButton(true, animated: false)
+  }
 }
