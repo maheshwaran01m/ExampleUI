@@ -9,7 +9,7 @@ import UIKit
 
 enum ViewCoordinator: CaseIterable {
   case text, textField, textView, image, search, button, stack, datePicker, calender, photoPicker, videoPicker,
-       moveItem, table, list, scroll, alert, dialogAlert, animation, tab, loader, colorPicker, toolBarButton, toggle,
+       moveItem, table, combineTable, list, scroll, alert, dialogAlert, animation, tab, loader, colorPicker, toolBarButton, toggle,
        segment, swipe, refresh, progress, gesture, sheet, quickLook, menu, notification, navigation, audio
   
   var title: String {
@@ -27,6 +27,7 @@ enum ViewCoordinator: CaseIterable {
     case .videoPicker: return "Video Picker"
     case .moveItem: return "Move Item"
     case .table: return "Table"
+    case .combineTable: return "Combine Table"
     case .list: return "List"
     case .scroll: return "Scroll"
     case .alert: return "Alert"
@@ -66,6 +67,7 @@ enum ViewCoordinator: CaseIterable {
     case .videoPicker: return CustomVideoPickerVC()
     case .moveItem: return CustomMoveItemVC()
     case .table: return CustomTableVC()
+    case .combineTable: return CustomCombineTableVC()
     case .list: return CustomListVC()
     case .scroll: return CustomScrollVC()
     case .alert: return CustomAlertVC()
