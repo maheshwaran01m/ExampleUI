@@ -38,6 +38,8 @@
 		3DEFA3AB2B9C964B00ED17B9 /* CustomTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3AA2B9C964B00ED17B9 /* CustomTableVC.swift */; };
 		3DEFA3AD2B9CAE9600ED17B9 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3AC2B9CAE9600ED17B9 /* DateExtensions.swift */; };
 		3DEFA3AF2B9D565500ED17B9 /* CalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEFA3AE2B9D565500ED17B9 /* CalendarPicker.swift */; };
+		3DF9D3032D492E1100B921E6 /* CustomCombineTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9D3022D492E0100B921E6 /* CustomCombineTableVC.swift */; };
+		3DF9D3072D49336B00B921E6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9D3062D49336900B921E6 /* Observable.swift */; };
 		9D057E382B6891C10042D6D9 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D057E372B6891C10042D6D9 /* AvatarImage.swift */; };
 		9D057E3A2B68A1840042D6D9 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D057E392B68A1840042D6D9 /* CustomImageView.swift */; };
 		9D057E3C2B68A6170042D6D9 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D057E3B2B68A6170042D6D9 /* Symbol.swift */; };
@@ -102,6 +104,8 @@
 		3DEFA3AA2B9C964B00ED17B9 /* CustomTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableVC.swift; sourceTree = "<group>"; };
 		3DEFA3AC2B9CAE9600ED17B9 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		3DEFA3AE2B9D565500ED17B9 /* CalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPicker.swift; sourceTree = "<group>"; };
+		3DF9D3022D492E0100B921E6 /* CustomCombineTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCombineTableVC.swift; sourceTree = "<group>"; };
+		3DF9D3062D49336900B921E6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		9D057E372B6891C10042D6D9 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
 		9D057E392B68A1840042D6D9 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		9D057E3B2B68A6170042D6D9 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 				3DEFA3A42B9C957B00ED17B9 /* CustomNotificationVC.swift */,
 				3DEFA3A62B9C95AD00ED17B9 /* CustomNavigationVC.swift */,
 				3DEFA3A82B9C95E600ED17B9 /* CustomAudioVC.swift */,
+				3DF9D3022D492E0100B921E6 /* CustomCombineTableVC.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				9DE57BBE2B6A0005004C3DCB /* UITextViewExtensions.swift */,
 				9D4F72D62B67594E00390213 /* DispatchQueueExtensions.swift */,
 				9D057E3B2B68A6170042D6D9 /* Symbol.swift */,
+				3DF9D3062D49336900B921E6 /* Observable.swift */,
 				3DEFA3AC2B9CAE9600ED17B9 /* DateExtensions.swift */,
 				3DEFA3AE2B9D565500ED17B9 /* CalendarPicker.swift */,
 			);
@@ -374,6 +380,7 @@
 				3DEFA3972B9C93EA00ED17B9 /* CustomSwipeVC.swift in Sources */,
 				3DEFA3772B9C8FD900ED17B9 /* CustomDatePickerVC.swift in Sources */,
 				3DEFA3752B9C8F8200ED17B9 /* CustomStackVC.swift in Sources */,
+				3DF9D3072D49336B00B921E6 /* Observable.swift in Sources */,
 				9D56829B2B66643A001D123F /* Constants.swift in Sources */,
 				3DEFA38D2B9C929900ED17B9 /* CustomLoaderVC.swift in Sources */,
 				3DEFA3992B9C942400ED17B9 /* CustomRefreshVC.swift in Sources */,
@@ -400,6 +407,7 @@
 				9D56828B2B6540BA001D123F /* UIFontExtensions.swift in Sources */,
 				3DEFA3AB2B9C964B00ED17B9 /* CustomTableVC.swift in Sources */,
 				3DEFA37D2B9C908300ED17B9 /* CustomVideoPickerVC.swift in Sources */,
+				3DF9D3032D492E1100B921E6 /* CustomCombineTableVC.swift in Sources */,
 				9D5682932B6551E4001D123F /* ToastManager.swift in Sources */,
 				3DEFA39B2B9C945D00ED17B9 /* CustomProgressVC.swift in Sources */,
 				9D5682972B665873001D123F /* LayoutConstraint.swift in Sources */,
