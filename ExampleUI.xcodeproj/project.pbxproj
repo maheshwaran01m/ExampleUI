@@ -67,6 +67,7 @@
 		9D5682972B665873001D123F /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682962B665873001D123F /* LayoutConstraint.swift */; };
 		9D5682992B665E67001D123F /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5682982B665E67001D123F /* UITextFieldExtensions.swift */; };
 		9D56829B2B66643A001D123F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56829A2B66643A001D123F /* Constants.swift */; };
+		9D9777C12D7401B0003E5E5E /* CustomSquareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9777C02D7401B0003E5E5E /* CustomSquareVC.swift */; };
 		9DE57BBB2B69E892004C3DCB /* CustomTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE57BBA2B69E892004C3DCB /* CustomTextViewVC.swift */; };
 		9DE57BBD2B69EA3F004C3DCB /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE57BBC2B69EA3F004C3DCB /* PlaceholderTextView.swift */; };
 		9DE57BBF2B6A0005004C3DCB /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE57BBE2B6A0005004C3DCB /* UITextViewExtensions.swift */; };
@@ -135,6 +136,7 @@
 		9D5682962B665873001D123F /* LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
 		9D5682982B665E67001D123F /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		9D56829A2B66643A001D123F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9D9777C02D7401B0003E5E5E /* CustomSquareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSquareVC.swift; sourceTree = "<group>"; };
 		9DE57BBA2B69E892004C3DCB /* CustomTextViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextViewVC.swift; sourceTree = "<group>"; };
 		9DE57BBC2B69EA3F004C3DCB /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		9DE57BBE2B6A0005004C3DCB /* UITextViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				3DEFA3A62B9C95AD00ED17B9 /* CustomNavigationVC.swift */,
 				3DEFA3A82B9C95E600ED17B9 /* CustomAudioVC.swift */,
 				3DF9D3022D492E0100B921E6 /* CustomCombineTableVC.swift */,
+				9D9777C02D7401B0003E5E5E /* CustomSquareVC.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				3DEFA39B2B9C945D00ED17B9 /* CustomProgressVC.swift in Sources */,
 				9D5682972B665873001D123F /* LayoutConstraint.swift in Sources */,
 				9D1371A22B65132F004CEB9A /* ViewCoordinator.swift in Sources */,
+				9D9777C12D7401B0003E5E5E /* CustomSquareVC.swift in Sources */,
 				9DE57BBB2B69E892004C3DCB /* CustomTextViewVC.swift in Sources */,
 				9D4F72D72B67594E00390213 /* DispatchQueueExtensions.swift in Sources */,
 				3DEFA37B2B9C904900ED17B9 /* CustomPhotoPickerVC.swift in Sources */,

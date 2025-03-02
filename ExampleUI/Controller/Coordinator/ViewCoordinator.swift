@@ -10,7 +10,7 @@ import UIKit
 enum ViewCoordinator: CaseIterable {
   case text, textField, textView, image, search, button, stack, datePicker, calender, photoPicker, videoPicker,
        moveItem, table, combineTable, list, scroll, alert, dialogAlert, animation, tab, loader, colorPicker, toolBarButton, toggle,
-       segment, swipe, refresh, progress, gesture, sheet, quickLook, menu, notification, navigation, audio
+       segment, swipe, refresh, progress, gesture, sheet, quickLook, menu, notification, navigation, audio, square
   
   var title: String {
     switch self {
@@ -49,6 +49,7 @@ enum ViewCoordinator: CaseIterable {
     case .notification: return "Notification"
     case .navigation: return "Navigation"
     case .audio: return "Audio"
+    case .square: return "Square"
     }
   }
   
@@ -89,6 +90,7 @@ enum ViewCoordinator: CaseIterable {
     case .notification: return CustomNotificationVC()
     case .navigation: return CustomNavigationVC()
     case .audio: return CustomAudioVC()
+    case .square: return CustomSquareVC()
     }
   }
 }
