@@ -18,6 +18,7 @@ class CustomSquareVC: UIViewController {
   }(UIStackView(frame: .zero))
   
   private var selectedSquare: UIColor?
+  private var squareColorDict = [UIColor: Int]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -72,9 +73,21 @@ class CustomSquareVC: UIViewController {
   @objc private func addSquares(_ sender: UITapGestureRecognizer) {
     let location = sender.location(in: view) // tap location
     
-    let squareView = UIView(frame: .init(x: location.x, y: location.y, width: 40, height: 40))
-    squareView.backgroundColor = selectedSquare ?? .green
+    let squareLabel = UILabel(frame: .init(x: location.x, y: location.y, width: 40, height: 40))
+    squareLabel.backgroundColor = selectedSquare ?? .green
+    squareLabel.textAlignment = .center
+    squareLabel.textColor = .label
     
-    view.addSubview(squareView)
+    if let selectedSquare {
+      if let exisitingCount = squareColorDict[selectedSquare] {
+        squareLabel.text = "\(exisitingCount + 1)"
+        
+        squareColorDict[selectedSquare]! += 1
+      } else {
+        squareLabel.text = "1"
+        squareColorDict[selectedSquare] = 1
+      }
+    }
+    view.addSubview(squareLabel)
   }
 }
