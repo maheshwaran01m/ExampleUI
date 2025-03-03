@@ -17,8 +17,18 @@ class CustomSquareVC: UIViewController {
     return $0
   }(UIStackView(frame: .zero))
   
+  private lazy var undoButton: UIButton = {
+    let undoButton = UIButton(primaryAction: UIAction { [weak self] action in
+      self?.undoButtonAction(action)
+    })
+    undoButton.setTitle("Undo", for: .normal)
+    return undoButton
+  }()
+  
   private var selectedSquare: UIColor?
   private var squareColorDict = [UIColor: Int]()
+  
+  private var undoLabelStack = [UILabel]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,6 +41,7 @@ class CustomSquareVC: UIViewController {
     setupButtons()
     setupLayoutConstraint()
     setupTapGesture()
+    setupUndoButton()
   }
   
   private func setupButtons() {
@@ -89,5 +100,42 @@ class CustomSquareVC: UIViewController {
       }
     }
     view.addSubview(squareLabel)
+    
+    undoLabelStack.append(squareLabel)
+    //
+    updateUndoButtonState()
+  }
+  
+  // MARK: - Undo Button
+  
+  func setupUndoButton() {
+    view.addSubview(undoButton)
+    undoButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      undoButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+      undoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+      undoButton.heightAnchor.constraint(equalToConstant: 44),
+    ])
+    updateUndoButtonState()
+  }
+  
+  private func updateUndoButtonState() {
+    if undoLabelStack.isEmpty, undoButton.isEnabled {
+      undoButton.isEnabled = false
+    } else if !undoLabelStack.isEmpty, !undoButton.isEnabled {
+      undoButton.isEnabled = true
+    }
+  }
+  
+  private func undoButtonAction(_ action: UIAction) {
+    guard let lastLabel = undoLabelStack.popLast() else { return }
+    
+    if let labelColor = lastLabel.backgroundColor,
+       let count = squareColorDict[labelColor] {
+      squareColorDict[labelColor]! = count - 1
+    }
+    lastLabel.removeFromSuperview()
+    updateUndoButtonState()
   }
 }
