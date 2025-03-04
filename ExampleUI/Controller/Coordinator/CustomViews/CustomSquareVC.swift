@@ -25,10 +25,20 @@ class CustomSquareVC: UIViewController {
     return undoButton
   }()
   
+  private lazy var redoButton: UIButton = {
+    let undoButton = UIButton(primaryAction: UIAction { [weak self] action in
+      self?.redoButtonAction(action)
+    })
+    undoButton.setTitle("Redo", for: .normal)
+    return undoButton
+  }()
+  
   private var selectedSquare: UIColor?
   private var squareColorDict = [UIColor: Int]()
   
   private var undoLabelStack = [UILabel]()
+  
+  private var redoLabelStack = [UILabel]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,6 +52,7 @@ class CustomSquareVC: UIViewController {
     setupLayoutConstraint()
     setupTapGesture()
     setupUndoButton()
+    setupRedoButton()
   }
   
   private func setupButtons() {
@@ -102,8 +113,10 @@ class CustomSquareVC: UIViewController {
     view.addSubview(squareLabel)
     
     undoLabelStack.append(squareLabel)
-    //
+    // undo button state
     updateUndoButtonState()
+    // redo button state
+    updateRedoButtonState()
   }
   
   // MARK: - Undo Button
@@ -136,6 +149,45 @@ class CustomSquareVC: UIViewController {
       squareColorDict[labelColor]! = count - 1
     }
     lastLabel.removeFromSuperview()
+    redoLabelStack.append(lastLabel) // for redo
+    
     updateUndoButtonState()
+    updateRedoButtonState()
+  }
+  
+  // MARK: - Redo Button
+  
+  func setupRedoButton() {
+    view.addSubview(redoButton)
+    redoButton.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+      redoButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+      redoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+      redoButton.heightAnchor.constraint(equalToConstant: 44),
+    ])
+    updateRedoButtonState()
+  }
+  
+  private func updateRedoButtonState() {
+    if redoLabelStack.isEmpty, redoButton.isEnabled {
+      redoButton.isEnabled = false
+    } else if !redoLabelStack.isEmpty, !redoButton.isEnabled {
+      redoButton.isEnabled = true
+    }
+  }
+  
+  private func redoButtonAction(_ action: UIAction) {
+    guard let lastLabel = redoLabelStack.popLast() else { return }
+    
+    undoLabelStack.append(lastLabel) // undo stack
+    
+    if let labelColor = lastLabel.backgroundColor,
+       let count = squareColorDict[labelColor] {
+      squareColorDict[labelColor]! = count + 1
+    }
+    view.addSubview(lastLabel)
+    updateUndoButtonState()
+    updateRedoButtonState()
   }
 }
